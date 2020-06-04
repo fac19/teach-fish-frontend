@@ -1,3 +1,9 @@
+Deployed on Netlify https://enterprise-adventure.netlify.app/
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c7350972-e42c-473e-986a-d8defa193556/deploy-status)](https://app.netlify.com/sites/enterprise-adventure/deploys)
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
