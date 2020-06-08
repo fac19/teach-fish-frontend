@@ -5,15 +5,16 @@ import {
   primaryColour,
   secondaryColour,
   accentColour,
+  linkColour,
 } from "../colours";
 
 const Link = styled.a`
   font-family: "Josefin Sans", sans-serif;
   transition: all 0.2s ease-in-out;
-  //   color:
+  color: ${linkColour};
   &:hover {
     font-size: 1.2rem;
-    // color;
+    color: ${accentColour};
   }
 `;
 
