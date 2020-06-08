@@ -1,9 +1,6 @@
 Deployed on Netlify https://enterprise-adventure.netlify.app/
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c7350972-e42c-473e-986a-d8defa193556/deploy-status)](https://app.netlify.com/sites/enterprise-adventure/deploys)
 
-
-
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -72,3 +69,9 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+### Dependencies Installed
+
+[React Router Dom](https://www.npmjs.com/package/react-router-dom) - To route app
+
+### Dev Dependencies Installed
