@@ -9,12 +9,6 @@ import MyMissions from "./pages/myMissionsPage/MyMissions";
 import MyProfile from "./pages/myProfilePage/MyProfile";
 import Mission from "./pages/missionPage/Mission";
 
-// test("renders learn react link", () => {
-//   const { getByText } = render(<App />);
-//   const linkElement = getByText(/learn react/i);
-//   expect(linkElement).toBeInTheDocument();
-// });
-
 test("Renders landing page", () => {
   const { getByText } = render(<Landing />);
   expect(getByText(/Landing/)).toBeTruthy();
