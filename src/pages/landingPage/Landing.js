@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "../../components/global/links/Links";
+import { Heading } from "../../components/global/heading/Heading";
 
 const Landing = () => {
   return (
     <section>
-      <h1>Landing Page</h1>
+      <Heading>Landing Page</Heading>
       <Link href="/about">Learn More</Link>
     </section>
   );
