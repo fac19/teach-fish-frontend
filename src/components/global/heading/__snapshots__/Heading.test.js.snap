@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Heading component is styled 1`] = `
+.c0 {
+  font-family: "Josefin Sans",sans-serif;
+  font-size: 2rem;
+  color: navy;
+}
+
+@media (min-width:600px) {
+  .c0 {
+    font-size: 4rem;
+  }
+}
+
+<h1
+  className="c0"
+/>
+`;
