@@ -73,5 +73,6 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 ### Dependencies Installed
 
 [React Router Dom](https://www.npmjs.com/package/react-router-dom) - To route app
+Netlify Identity Widget -
 
 ### Dev Dependencies Installed
