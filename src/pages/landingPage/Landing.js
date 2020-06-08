@@ -1,12 +1,14 @@
 import React from "react";
-import Link from "../../components/global/links/Links";
+import Links from "../../components/global/links/Links";
 import Heading from "../../components/global/heading/Heading";
+import TextArea from "../../components/global/forms/textArea/TextArea";
 
 const Landing = () => {
   return (
     <section>
       <Heading>Landing Page</Heading>
-      <Link href="/about">Learn More</Link>
+      <Links href="/about">Learn More</Links>
+      <TextArea label={"Task Two"} />
     </section>
   );
 };

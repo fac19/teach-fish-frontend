@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextArea component is styled 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
+  min-height: 5rem;
+  resize: none;
+}
+
+<label
+  className="c0"
+>
+  <textarea
+    className="c1"
+    name="textarea"
+    placeholder="Please type your answer here..."
+  />
+</label>
+`;
