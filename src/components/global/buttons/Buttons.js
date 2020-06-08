@@ -3,12 +3,14 @@ import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import PersonAddIcon from "@material-ui/icons/PersonAdd";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import { primaryColour } from "../colours";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    "& > *": {
-      margin: theme.spacing(1),
-    },
+    minHeight: "4rem",
+    minWidth: "10rem",
+    fontFamily: "Josefin Sans, sans-serif",
+    backgroundColor: primaryColour,
   },
 }));
 
@@ -16,9 +18,9 @@ const TextButton = (props) => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <Button variant="contained">{props.text}</Button>
-    </div>
+    <Button className={classes.root} variant="contained">
+      {props.text}
+    </Button>
   );
 };
 

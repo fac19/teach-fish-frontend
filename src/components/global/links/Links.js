@@ -1,12 +1,5 @@
 import styled from "styled-components";
-import {
-  bgColour,
-  fontColour,
-  primaryColour,
-  secondaryColour,
-  accentColour,
-  linkColour,
-} from "../colours";
+import { accentColour, linkColour } from "../colours";
 
 const Link = styled.a`
   font-family: "Josefin Sans", sans-serif;

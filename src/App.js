@@ -1,9 +1,4 @@
 import React from "react";
-import {
-  TextButton,
-  SignUpButton,
-  LogInButton,
-} from "./components/global/buttons/Buttons";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Landing from "./pages/landingPage/Landing";
 import About from "./pages/aboutPage/About";
@@ -17,12 +12,7 @@ import "./App.css";
 
 const App = () => {
   return (
-    <>
-      <div className="App">
-        <SignUpButton text={"Get Started!"} />
-        <LogInButton text={"Log In"} />
-        <TextButton />
-      </div>
+    <div className="App">
       <Router>
         <Switch>
           <Route exact path="/" component={() => <Landing />} />
@@ -34,7 +24,7 @@ const App = () => {
           <Route path="/mission/:number" component={() => <Mission />} />
         </Switch>
       </Router>
-    </>
+    </div>
   );
 };
 
