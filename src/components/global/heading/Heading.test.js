@@ -9,4 +9,7 @@ test("Heading component is styled", () => {
   expect(tree).toMatchSnapshot();
   expect(tree).toHaveStyleRule("color", "navy");
   expect(tree).toHaveStyleRule("font-size", "2rem");
+  expect(tree).toHaveStyleRule("font-size", "4rem", {
+    media: "(min-width:600px)",
+  });
 });

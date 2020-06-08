@@ -7,6 +7,12 @@ exports[`Heading component is styled 1`] = `
   color: navy;
 }
 
+@media (min-width:600px) {
+  .c0 {
+    font-size: 4rem;
+  }
+}
+
 <h1
   className="c0"
 />
