@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "./App.css";
+import Landing from "./pages/landingPage/Landing";
+import About from "./pages/aboutPage/About";
+import Login from "./pages/loginPage/Login";
+import SignUp from "./pages/signUpPage/SignUp";
+import MyMissions from "./pages/myMissionsPage/MyMissions";
+import MyProfile from "./pages/myProfilePage/MyProfile";
+import Mission from "./pages/missionPage/Mission";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={() => <Landing />} />
+        <Route path="/about" component={() => <About />} />
+        <Route path="/signup" component={() => <SignUp />} />
+        <Route path="/login" component={() => <Login />} />
+        <Route path="/my-missions" component={() => <MyMissions />} />
+        <Route path="/my-profile" component={() => <MyProfile />} />
+        <Route path="/mission/:number" component={() => <Mission />} />
+      </Switch>
+    </Router>
   );
-}
+};
 
 export default App;
