@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "../../components/global/links/Links";
-import { Heading } from "../../components/global/heading/Heading";
+import Link from "../../components/global/links/Links";
+import Heading from "../../components/global/heading/Heading";
 
 const Landing = () => {
   return (

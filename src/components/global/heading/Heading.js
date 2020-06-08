@@ -1,12 +1,5 @@
 import styled from "styled-components";
-import {
-  bgColour,
-  fontColour,
-  primaryColour,
-  secondaryColour,
-  accentColour,
-  linkColour,
-} from "../colours";
+import { fontColour } from "../colours";
 
 const Heading = styled.h1`
   font-family: "Josefin Sans", sans-serif;
@@ -18,4 +11,4 @@ const Heading = styled.h1`
   
 `;
 
-export { Heading };
+export default Heading;
