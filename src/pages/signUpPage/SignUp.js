@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { useHistory } from "react-router-dom";
 import Heading from "../../components/global/heading/Heading";
 import {
   DropdownCountries,
@@ -8,9 +9,31 @@ import DateInput from "../../components/global/forms/dateInput/DateInput";
 import { TextButton } from "../../components/global/buttons/Buttons";
 import { FormContainer, FormInputWrapper } from "./SignUp.style";
 import { AppContext } from "../../utils/AppContext";
+import { postStudent } from "../../utils/post-data";
 
 const SignUp = () => {
   const { loginInfo, setLoginInfo } = useContext(AppContext);
+
+  const history = useHistory();
+
+  const [form, setForm] = React.useState({
+    dob: "",
+    gender: "",
+    country: "",
+  });
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setForm({ ...form, [name]: value });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    postStudent(JSON.stringify(form))
+      .then(() => history.push("/my-missions"))
+      .catch(console.error);
+  };
 
   React.useEffect(() => {
     const token = JSON.parse(localStorage.getItem("token"));
@@ -29,15 +52,15 @@ const SignUp = () => {
   return (
     <>
       <Heading>Before you begin...</Heading>
-      <FormContainer>
+      <FormContainer onSubmit={handleSubmit}>
         <FormInputWrapper>
-          <DateInput />
+          <DateInput onChange={handleChange} />
         </FormInputWrapper>
         <FormInputWrapper>
-          <DropdownCountries />
+          <DropdownCountries onChange={handleChange} />
         </FormInputWrapper>
         <FormInputWrapper>
-          <DropdownGender />
+          <DropdownGender onChange={handleChange} />
         </FormInputWrapper>
         <TextButton type={"submit"} text={"Get started!"} />
       </FormContainer>

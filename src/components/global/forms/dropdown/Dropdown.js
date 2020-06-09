@@ -1,11 +1,16 @@
 import React from "react";
 import Label from "../Label";
 
-const DropdownCountries = () => {
+const DropdownCountries = (props) => {
   return (
     <>
       <Label htmlFor="countries">Country</Label>
-      <select name="country" id="country" defaultValue="select-option" required>
+      <select
+        name="country"
+        onChange={props.onChange}
+        id="country"
+        defaultValue="select-option"
+        required>
         <option value="select-option" disabled>
           Select option
         </option>
@@ -17,18 +22,23 @@ const DropdownCountries = () => {
   );
 };
 
-const DropdownGender = () => {
+const DropdownGender = (props) => {
   return (
     <>
       <Label htmlFor="gender">Gender</Label>
-      <select name="gender" id="gender" defaultValue="select-option" required>
+      <select
+        name="gender"
+        onChange={props.onChange}
+        id="gender"
+        defaultValue="select-option"
+        required>
         <option value="select-option" disabled>
           Select option
         </option>
-        <option value="female">Female</option>
-        <option value="male">Male</option>
-        <option value="other">Other</option>
-        <option value="undisclosed">Prefer not to say</option>
+        <option value="Female">Female</option>
+        <option value="Male">Male</option>
+        <option value="Other">Other</option>
+        <option value="Prefer Not To Say">Prefer not to say</option>
       </select>
     </>
   );
