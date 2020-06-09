@@ -7,12 +7,13 @@ import SignUp from "./pages/signUpPage/SignUp";
 import MyMissions from "./pages/myMissionsPage/MyMissions";
 import MyProfile from "./pages/myProfilePage/MyProfile";
 import Mission from "./pages/missionPage/Mission";
+import AppContainer from "./App.style";
 
 import "./App.css";
 
 const App = () => {
   return (
-    <div className="App">
+    <AppContainer>
       <Router>
         <Switch>
           <Route exact path="/" component={() => <Landing />} />
@@ -24,7 +25,7 @@ const App = () => {
           <Route path="/mission/:number" component={() => <Mission />} />
         </Switch>
       </Router>
-    </div>
+    </AppContainer>
   );
 };
 
