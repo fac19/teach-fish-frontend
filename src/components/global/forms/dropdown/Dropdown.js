@@ -1,9 +1,10 @@
 import React from "react";
+import Label from "../Label";
 
 const DropdownCountries = () => {
   return (
     <>
-      <label htmlFor="countries">Country</label>
+      <Label htmlFor="countries">Country</Label>
       <select name="country" id="country" defaultValue="select-option" required>
         <option value="select-option" disabled>
           Select option
@@ -19,7 +20,7 @@ const DropdownCountries = () => {
 const DropdownGender = () => {
   return (
     <>
-      <label htmlFor="gender">Gender</label>
+      <Label htmlFor="gender">Gender</Label>
       <select name="gender" id="gender" defaultValue="select-option" required>
         <option value="select-option" disabled>
           Select option

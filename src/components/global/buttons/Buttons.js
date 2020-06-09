@@ -11,6 +11,8 @@ const useStyles = makeStyles((theme) => ({
     minWidth: "10rem",
     fontFamily: "Josefin Sans, sans-serif",
     backgroundColor: primaryColour,
+    marginTop: "1rem",
+    marginBottom: "1rem",
   },
 }));
 
@@ -18,7 +20,7 @@ const TextButton = (props) => {
   const classes = useStyles();
 
   return (
-    <Button className={classes.root} variant="contained">
+    <Button type={props.type} className={classes.root} variant="contained">
       {props.text}
     </Button>
   );

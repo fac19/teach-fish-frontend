@@ -7,12 +7,13 @@ import SignUp from "./pages/signUpPage/SignUp";
 import MyMissions from "./pages/myMissionsPage/MyMissions";
 import MyProfile from "./pages/myProfilePage/MyProfile";
 import Mission from "./pages/missionPage/Mission";
+import AppContainer from "./App.style";
 
 import "./App.css";
 
 const App = () => {
   return (
-    <div className="App">
+    <AppContainer>
       <Router>
         <Switch>
           <Route exact path="/" component={() => <Landing />} />
@@ -24,8 +25,49 @@ const App = () => {
           <Route path="/mission/:number" component={() => <Mission />} />
         </Switch>
       </Router>
-    </div>
+    </AppContainer>
   );
 };
+
+// const netlifyAuth = {
+//   isAuthenticated: false,
+//   user: null,
+//   authenticate(callback) {
+//     this.isAuthenticated = true;
+//     netlifyIdentity.open();
+//     netlifyIdentity.on("login", (user) => {
+//       this.user = user;
+//       callback(user);
+//     });
+//   },
+//   signout(callback) {
+//     this.isAuthenticated = false;
+//     netlifyIdentity.logout();
+//     netlifyIdentity.on("logout", () => {
+//       this.user = null;
+//       callback();
+//     });
+//   },
+// };
+
+// function PrivateRoute({ component: Component, ...rest }) {
+//   return (
+//     <Route
+//       {...rest}
+//       render={(props) =>
+//         netlifyAuth.isAuthenticated ? (
+//           <Component {...props} />
+//         ) : (
+//           <Redirect
+//             to={{
+//               pathname: "/login",
+//               state: { from: props.location },
+//             }}
+//           />
+//         )
+//       }
+//     />
+//   );
+// }
 
 export default App;
