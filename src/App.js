@@ -28,4 +28,45 @@ const App = () => {
   );
 };
 
+// const netlifyAuth = {
+//   isAuthenticated: false,
+//   user: null,
+//   authenticate(callback) {
+//     this.isAuthenticated = true;
+//     netlifyIdentity.open();
+//     netlifyIdentity.on("login", (user) => {
+//       this.user = user;
+//       callback(user);
+//     });
+//   },
+//   signout(callback) {
+//     this.isAuthenticated = false;
+//     netlifyIdentity.logout();
+//     netlifyIdentity.on("logout", () => {
+//       this.user = null;
+//       callback();
+//     });
+//   },
+// };
+
+// function PrivateRoute({ component: Component, ...rest }) {
+//   return (
+//     <Route
+//       {...rest}
+//       render={(props) =>
+//         netlifyAuth.isAuthenticated ? (
+//           <Component {...props} />
+//         ) : (
+//           <Redirect
+//             to={{
+//               pathname: "/login",
+//               state: { from: props.location },
+//             }}
+//           />
+//         )
+//       }
+//     />
+//   );
+// }
+
 export default App;
