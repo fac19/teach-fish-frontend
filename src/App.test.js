@@ -21,7 +21,7 @@ test("Renders about page", () => {
 
 test("Renders SignUp page", () => {
   const { getByText } = render(<SignUp />);
-  expect(getByText(/Sign up/)).toBeTruthy();
+  expect(getByText(/Before you begin/)).toBeTruthy();
 });
 
 test("Renders login page", () => {
