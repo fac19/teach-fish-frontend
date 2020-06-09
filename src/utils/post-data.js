@@ -3,6 +3,9 @@ const Airtable = require("airtable");
 const entriesTable = base("Entries");
 const studentTable = base("Students");
 
+import React, { useContext } from "react";
+import { AppContext } from "../utils/AppContext";
+
 // url = AIRTABLE_API_URL + / + AIRTABLE_BASE_ID + / + tableName;
 
 const PostData = (event, context) => {
@@ -21,14 +24,17 @@ const minifyRecord = (record) => {
 };
 
 const postStudent = async (fields) => {
-  console.log(fields);
+  const { loginInfo, setLoginInfo } = useContext(AppContext);
+  const token = JSON.parse(localStorage.getItem("token"));
+  console.log("loginInfo", loginInfo);
+  // console.log(fields);
   // get user info from app context
   try {
     const createdRecord = await studentTable.create({
       fields: {
-        Username: "",
+        Name: token.full_name,
         Gender: fields.gender,
-        Email: "",
+        Email: token.email,
         "Current level": 0,
         DOB: fields.dob,
         Country: fields.Country,

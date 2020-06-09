@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Heading from "../../components/global/heading/Heading";
 import {
   DropdownCountries,
@@ -7,8 +7,25 @@ import {
 import DateInput from "../../components/global/forms/dateInput/DateInput";
 import { TextButton } from "../../components/global/buttons/Buttons";
 import { FormContainer, FormInputWrapper } from "./SignUp.style";
+import { AppContext } from "../../utils/AppContext";
 
 const SignUp = () => {
+  const { loginInfo, setLoginInfo } = useContext(AppContext);
+
+  React.useEffect(() => {
+    const token = JSON.parse(localStorage.getItem("token"));
+    // console.log(token.email, token.full_name);
+
+    if (token) {
+      setLoginInfo({
+        email: token.email,
+        name: token.full_name,
+      });
+    }
+  }, [setLoginInfo]);
+
+  // console.log(loginInfo);
+
   return (
     <>
       <Heading>Before you begin...</Heading>
