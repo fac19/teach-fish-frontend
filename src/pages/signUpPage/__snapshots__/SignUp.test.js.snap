@@ -6,6 +6,7 @@ Array [
   font-family: "Josefin Sans",sans-serif;
   font-size: 2rem;
   color: navy;
+  text-align: center;
 }
 
 @media (min-width:600px) {

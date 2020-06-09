@@ -20,7 +20,11 @@ const TextButton = (props) => {
   const classes = useStyles();
 
   return (
-    <Button type={props.type} className={classes.root} variant="contained">
+    <Button
+      type={props.type}
+      className={classes.root}
+      variant="contained"
+      onClick={props.onClick}>
       {props.text}
     </Button>
   );
