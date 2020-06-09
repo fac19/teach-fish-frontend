@@ -12,6 +12,7 @@ import SignUp from "./pages/signUpPage/SignUp";
 import MyMissions from "./pages/myMissionsPage/MyMissions";
 import MyProfile from "./pages/myProfilePage/MyProfile";
 import Mission from "./pages/missionPage/Mission";
+import AppContainer from "./App.style";
 
 import netlifyIdentity from "netlify-identity-widget";
 import auth from "../src/utils/auth";
@@ -46,23 +47,25 @@ const App = () => {
 
   return (
     <AppContextProvider>
-      <Router>
-        <Switch>
-          <Route exact path="/" component={() => <Landing />} />
-          <Route path="/about" component={() => <About />} />
-          <Route path="/signup" component={() => <SignUp />} />
-          <Route path="/login" component={() => <Login />} />
+      <AppContainer>
+        <Router>
+          <Switch>
+            <Route exact path="/" component={() => <Landing />} />
+            <Route path="/about" component={() => <About />} />
+            <Route path="/signup" component={() => <SignUp />} />
+            <Route path="/login" component={() => <Login />} />
 
-          {/* <Route path="/my-profile" component={auth(MyProfile, userInfo)} /> */}
-          <Route
-            path="/my-profile"
-            component={auth(MyProfile, netlifyIdentity.currentUser())}
-          />
+            {/* <Route path="/my-profile" component={auth(MyProfile, userInfo)} /> */}
+            <Route
+              path="/my-profile"
+              component={auth(MyProfile, netlifyIdentity.currentUser())}
+            />
 
-          <Route path="/my-missions" component={() => <MyMissions />} />
-          <Route path="/mission/:number" component={() => <Mission />} />
-        </Switch>
-      </Router>
+            <Route path="/my-missions" component={() => <MyMissions />} />
+            <Route path="/mission/:number" component={() => <Mission />} />
+          </Switch>
+        </Router>
+      </AppContainer>
     </AppContextProvider>
   );
 };
