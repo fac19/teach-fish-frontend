@@ -11,7 +11,7 @@ import Mission from "./pages/missionPage/Mission";
 
 test("Renders landing page", () => {
   const { getByText } = render(<Landing />);
-  expect(getByText(/Landing/)).toBeTruthy();
+  expect(getByText(/Enterprise Adventure/)).toBeTruthy();
 });
 
 test("Renders about page", () => {
