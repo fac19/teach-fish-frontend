@@ -1,0 +1,191 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignUp page is styled 1`] = `
+Array [
+  .c0 {
+  font-family: "Josefin Sans",sans-serif;
+  font-size: 2rem;
+  color: navy;
+}
+
+@media (min-width:600px) {
+  .c0 {
+    font-size: 4rem;
+  }
+}
+
+@media (min-width:768px) {
+
+}
+
+<h1
+    className="c0"
+  >
+    Before you begin...
+  </h1>,
+  .c2 {
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 70vh;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+@media (min-width:600px) {
+
+}
+
+@media (min-width:768px) {
+  .c0 {
+    height: 50vh;
+  }
+}
+
+<form
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <label
+        className="c2"
+        htmlFor="dob"
+      >
+        Date of birth
+      </label>
+      <input
+        id="dob"
+        name="dob"
+        type="date"
+      />
+    </div>
+    <div
+      className="c1"
+    >
+      <label
+        className="c2"
+        htmlFor="countries"
+      >
+        Country
+      </label>
+      <select
+        defaultValue="select-option"
+        id="country"
+        name="country"
+        required={true}
+      >
+        <option
+          disabled={true}
+          value="select-option"
+        >
+          Select option
+        </option>
+        <option
+          value="Nepal"
+        >
+          Nepal
+        </option>
+        <option
+          value="India"
+        >
+          India
+        </option>
+        <option
+          value="Rwanda"
+        >
+          Rwanda
+        </option>
+      </select>
+    </div>
+    <div
+      className="c1"
+    >
+      <label
+        className="c2"
+        htmlFor="gender"
+      >
+        Gender
+      </label>
+      <select
+        defaultValue="select-option"
+        id="gender"
+        name="gender"
+        required={true}
+      >
+        <option
+          disabled={true}
+          value="select-option"
+        >
+          Select option
+        </option>
+        <option
+          value="female"
+        >
+          Female
+        </option>
+        <option
+          value="male"
+        >
+          Male
+        </option>
+        <option
+          value="other"
+        >
+          Other
+        </option>
+        <option
+          value="undisclosed"
+        >
+          Prefer not to say
+        </option>
+      </select>
+    </div>
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-root-2"
+      disabled={false}
+      onBlur={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="submit"
+    >
+      <span
+        className="MuiButton-label"
+      >
+        Get started!
+      </span>
+    </button>
+  </form>,
+]
+`;
