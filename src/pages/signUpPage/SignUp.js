@@ -9,8 +9,6 @@ import DateInput from "../../components/global/forms/dateInput/DateInput";
 import { TextButton } from "../../components/global/buttons/Buttons";
 import { FormContainer, FormInputWrapper } from "./SignUp.style";
 import { AppContext } from "../../utils/AppContext";
-// import { postStudent } from "../../../.netlify/functions/post-data/post-data.js";
-// import { postStudent } from "../../utils/post-data";
 import fetchStudentRecords from "../../utils/fetch-data";
 
 const SignUp = () => {
@@ -18,8 +16,11 @@ const SignUp = () => {
   const { isUserInfoComplete, setIsUserInfoComplete } = useContext(AppContext);
 
   const history = useHistory();
+  const token = JSON.parse(localStorage.getItem("token"));
 
   const [form, setForm] = React.useState({
+    Name: token.full_name,
+    Email: token.email,
     dob: "",
     gender: "",
     country: "",
@@ -30,19 +31,28 @@ const SignUp = () => {
     setForm({ ...form, [name]: value });
   };
 
-  const handleSubmit = (event) => {
+  console.log(form);
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    fetch("../../../.netlify/functions/post-data/post-data.js", {
-      method: "POST",
-      body: JSON.stringify(form),
-    })
-      // postStudent(JSON.stringify(form))
-      .then(() => history.push("/my-missions"))
-      .catch(console.error);
+    const response = await fetch(
+      "../../../.netlify/functions/post-student/post-student.js",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(form),
+      },
+    );
+
+    const final = await response.json();
+
+    console.log(final);
   };
 
-  // Retrive data from airtable, then check if user is already registered with all neccessary information
+  // Retreive data from airtable, then check if user is already registered with all neccessary information
   // React.useEffect(() => {
   // get user email from state
   //   let userEmail = loginInfo.email;

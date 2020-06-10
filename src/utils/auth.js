@@ -20,9 +20,9 @@ export default function requireAuthentication(
   function AuthHOC(props) {
     // isLoggedIn????? HOW DO WE SET?
 
-    console.log("auth.js - component", Component);
-    console.log("auth.js - user", user);
-    console.log("auth.js - isLoggedIn", isLoggedIn);
+    // console.log("auth.js - component", Component);
+    // console.log("auth.js - user", user);
+    // console.log("auth.js - isLoggedIn", isLoggedIn);
     const classes = useStyles();
     const preventDefault = (event) => event.preventDefault();
     return user ? (
