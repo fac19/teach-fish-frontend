@@ -5,12 +5,14 @@ exports[`Link component is styled 1`] = `
   font-family: "Josefin Sans",sans-serif;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
-  color: purple;
+  color: #026CB6;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
 }
 
 .c0:hover {
   font-size: 1.2rem;
-  color: orange;
+  color: #E55982;
 }
 
 <a

@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import PersonAddIcon from "@material-ui/icons/PersonAdd";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
-import { primaryColour } from "../colours";
+import { primaryColour, fontColour } from "../colours";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -13,6 +13,8 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: primaryColour,
     marginTop: "1rem",
     marginBottom: "1rem",
+    fontWeight: "bold",
+    color: fontColour,
   },
 }));
 
