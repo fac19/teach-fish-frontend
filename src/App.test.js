@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import App from "./App";
+import { BrowserRouter as Router } from "react-router-dom";
 import Landing from "./pages/landingPage/Landing";
 import About from "./pages/aboutPage/About";
 import Login from "./pages/loginPage/Login";
@@ -10,7 +10,11 @@ import MyProfile from "./pages/myProfilePage/MyProfile";
 import Mission from "./pages/missionPage/Mission";
 
 test("Renders landing page", () => {
-  const { getByText } = render(<Landing />);
+  const { getByText } = render(
+    <Router>
+      <Landing />
+    </Router>,
+  );
   expect(getByText(/Enterprise Adventure/)).toBeTruthy();
 });
 

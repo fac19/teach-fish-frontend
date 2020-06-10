@@ -73,7 +73,8 @@ Array [
     <p
       className="c1"
     >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar pretium condimentum donec elementum eget. Pulvinar pretium 
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar pretium condimentum donec elementum eget. Pulvinar pretium
+       
     </p>
     <button
       className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-root-2"

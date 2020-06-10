@@ -6,6 +6,8 @@ exports[`Link component is styled 1`] = `
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   color: purple;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
 }
 
 .c0:hover {
@@ -13,7 +15,7 @@ exports[`Link component is styled 1`] = `
   color: orange;
 }
 
-<a
+<p
   className="c0"
 />
 `;

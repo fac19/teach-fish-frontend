@@ -6,6 +6,8 @@ exports[`Landing page component is styled 1`] = `
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   color: purple;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
 }
 
 .c3:hover {
@@ -69,10 +71,14 @@ exports[`Landing page component is styled 1`] = `
     className="c2"
   >
     <a
-      className="c3"
       href="/about"
+      onClick={[Function]}
     >
-      Learn More About the App
+      <p
+        className="c3"
+      >
+        Learn More About the App
+      </p>
     </a>
     <button
       className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-root-1"
