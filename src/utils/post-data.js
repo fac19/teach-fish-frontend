@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
 import { AppContext } from "../utils/AppContext";
-
-const Airtable = require("airtable");
+var Airtable = require("airtable");
+var base = new Airtable({ apiKey: "keyQZG9ns933oMZdo" }).base(
+  "appiR8DpsnVuhNHj4",
+);
 
 const entriesTable = base("Entries");
 const studentTable = base("Students");
