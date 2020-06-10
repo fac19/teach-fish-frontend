@@ -83,12 +83,12 @@ _Thursday_: 6 Points Total
 - Do not commit API keys to branches
 - Write in ES6 syntax consistently, especially for functions
 
-```jsx
-~~function myFunction(p1, p2){
-	// code
-}~~
+```javascript
+function myFunction(p1, p2) {
+  // code
+}
 
 const myFunction = (p1, p2) => {
-	//code
-}
+  //code
+};
 ```
