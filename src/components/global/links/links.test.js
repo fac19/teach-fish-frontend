@@ -7,5 +7,5 @@ import Link from "./Links";
 test("Link component is styled", () => {
   const tree = renderer.create(<Link />).toJSON();
   expect(tree).toMatchSnapshot();
-  expect(tree).toHaveStyleRule("color", "purple");
+  expect(tree).toHaveStyleRule("color", "#026CB6");
 });

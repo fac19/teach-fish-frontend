@@ -1,20 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Landing page component is styled 1`] = `
-.c3 {
-  font-family: "Josefin Sans",sans-serif;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  color: purple;
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.c3:hover {
-  font-size: 1.2rem;
-  color: orange;
-}
-
 .c1 {
   font-family: "Josefin Sans",sans-serif;
   font-size: 2rem;
@@ -49,7 +35,7 @@ exports[`Landing page component is styled 1`] = `
   text-align: center;
 }
 
-.c4 {
+.c3 {
   text-align: center;
 }
 
@@ -71,17 +57,14 @@ exports[`Landing page component is styled 1`] = `
     className="c2"
   >
     <a
+      className="makeStyles-links-1"
       href="/about"
       onClick={[Function]}
     >
-      <p
-        className="c3"
-      >
-        Learn More About the App
-      </p>
+      Learn More About the App
     </a>
     <button
-      className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-root-1"
+      className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-root-2"
       disabled={false}
       onBlur={[Function]}
       onClick={[Function]}
@@ -106,7 +89,7 @@ exports[`Landing page component is styled 1`] = `
     </button>
   </section>
   <div
-    className="c4"
+    className="c3"
   >
     <img
       alt="Teach a Man to Fish logo"

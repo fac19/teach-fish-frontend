@@ -5,7 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 
 import styled from "styled-components";
-import { primaryColour } from "../../colours";
+import { linkColour } from "../../colours";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 const BackButton = styled.button`
   border-radius: 100%;
   border: none;
-  background-color: ${primaryColour};
+  background-color: ${linkColour};
   width: 2.5rem;
   height: 2.5rem;
   cursor: pointer;
