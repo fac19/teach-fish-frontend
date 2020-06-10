@@ -5,7 +5,7 @@ Array [
   .c0 {
   border-radius: 100%;
   border: none;
-  background-color: red;
+  background-color: #026CB6;
   width: 2.5rem;
   height: 2.5rem;
   cursor: pointer;
@@ -73,7 +73,8 @@ Array [
     <p
       className="c1"
     >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar pretium condimentum donec elementum eget. Pulvinar pretium 
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar pretium condimentum donec elementum eget. Pulvinar pretium
+       
     </p>
     <button
       className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-root-2"
