@@ -6,6 +6,13 @@ const Airtable = require("airtable");
 const entriesTable = base("Entries");
 const studentTable = base("Students");
 
+const { AIRTABLE_API_KEY, AIRTABLE_BASE_ID, AIRTABLE_API_URL } = process.env;
+
+const base = new Airtable({
+  endpointUrl: AIRTABLE_API_URL,
+  apiKey: AIRTABLE_API_KEY,
+}).base(AIRTABLE_BASE_ID);
+
 // url = AIRTABLE_API_URL + / + AIRTABLE_BASE_ID + / + tableName;
 
 const PostData = (event, context) => {
