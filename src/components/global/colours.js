@@ -1,9 +1,9 @@
 const bgColour = "white";
 const fontColour = "navy";
-const primaryColour = "red";
+const primaryColour = "#88D364";
 const secondaryColour = "pink";
-const accentColour = "orange";
-const linkColour = "purple";
+const accentColour = "#E55982";
+const linkColour = "#026CB6";
 
 export {
   bgColour,
