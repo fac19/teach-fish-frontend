@@ -33,7 +33,7 @@ const Navbar = () => {
       <Link to="/my-missions" aria-label="My missions">
         <HomeIcon className={classes.root} />
       </Link>
-      <Link to="/my-profile" aria-label="My profile">
+      <Link to="/my-profile" id="nav-icon-myProfile" aria-label="My profile">
         <PersonIcon className={classes.root} />
       </Link>
       <Link to="/" aria-label="Logout" onClick={() => netlifyIdentity.open()}>
