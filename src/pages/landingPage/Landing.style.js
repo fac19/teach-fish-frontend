@@ -5,6 +5,7 @@ const LandingContainer = styled.section`
   height: 80vh;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   margin: 0;
 `;
 
