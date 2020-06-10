@@ -36,7 +36,15 @@ test("Learn More About the App link renders correctly", () => {
       <Landing />
     </Router>,
   );
-
   screen.getByRole("link");
   screen.getByText("Learn More About the App");
+});
+
+test("TAMTF logo renders correctly", () => {
+  render(
+    <Router>
+      <Landing />
+    </Router>,
+  );
+  screen.getByRole("img");
 });
