@@ -5,6 +5,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import Navbar from "./components/global/navbar/Navbar";
 import Landing from "./pages/landingPage/Landing";
 import About from "./pages/aboutPage/About";
 import Login from "./pages/loginPage/Login";
@@ -54,14 +55,22 @@ const App = () => {
             <Route path="/about" component={() => <About />} />
             <Route path="/signup" component={() => <SignUp />} />
             <Route path="/login" component={() => <Login />} />
-
+            <Route path="/logout" />
             {/* <Route path="/my-profile" component={auth(MyProfile, userInfo)} /> */}
             <Route
               path="/my-profile"
               component={auth(MyProfile, netlifyIdentity.currentUser())}
             />
 
-            <Route path="/my-missions" component={() => <MyMissions />} />
+            <Route
+              path="/my-missions"
+              component={() => (
+                <>
+                  <Navbar />
+                  <MyMissions />
+                </>
+              )}
+            />
             <Route path="/mission/:number" component={() => <Mission />} />
           </Switch>
         </Router>
