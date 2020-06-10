@@ -1,19 +1,15 @@
 import React, { useContext } from "react";
-import { AppContext } from "../utils/AppContext";
+import { AppContext } from "./AppContext";
 var Airtable = require("airtable");
-var base = new Airtable({ apiKey: "keyQZG9ns933oMZdo" }).base(
-  "appiR8DpsnVuhNHj4",
-);
-
-const entriesTable = base("Entries");
-const studentTable = base("Students");
-
 const { AIRTABLE_API_KEY, AIRTABLE_BASE_ID, AIRTABLE_API_URL } = process.env;
 
 const base = new Airtable({
   endpointUrl: AIRTABLE_API_URL,
   apiKey: AIRTABLE_API_KEY,
 }).base(AIRTABLE_BASE_ID);
+
+const entriesTable = base("Entries");
+const studentTable = base("Students");
 
 // url = AIRTABLE_API_URL + / + AIRTABLE_BASE_ID + / + tableName;
 
