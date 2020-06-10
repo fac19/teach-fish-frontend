@@ -8,8 +8,16 @@ function AppContextProvider(props) {
     name: "",
     email: "",
   });
+  const [isUserInfoComplete, setIsUserInfoComplete] = useState(false);
 
-  const providerValue = { userInfo, setUserInfo, loginInfo, setLoginInfo };
+  const providerValue = {
+    userInfo,
+    setUserInfo,
+    loginInfo,
+    setLoginInfo,
+    isUserInfoComplete,
+    setIsUserInfoComplete,
+  };
 
   return (
     <AppContext.Provider value={providerValue}>

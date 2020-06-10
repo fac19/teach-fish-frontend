@@ -10,9 +10,11 @@ import { TextButton } from "../../components/global/buttons/Buttons";
 import { FormContainer, FormInputWrapper } from "./SignUp.style";
 import { AppContext } from "../../utils/AppContext";
 import { postStudent } from "../../utils/post-data";
+import fetchStudentRecords from "../../utils/fetch-data";
 
 const SignUp = () => {
   const { loginInfo, setLoginInfo } = useContext(AppContext);
+  const { isUserInfoComplete, setIsUserInfoComplete } = useContext(AppContext);
 
   const history = useHistory();
 
@@ -34,6 +36,23 @@ const SignUp = () => {
       .then(() => history.push("/my-missions"))
       .catch(console.error);
   };
+
+  // Retrive data from airtable, then check if user is already registered with all neccessary information
+  React.useEffect(() => {
+    // get user email from state
+    let userEmail = loginInfo.email;
+    // pass on email as a param to the database query
+    // let userDataAirtable = fetchStudentRecords(userEmail);
+    console.log("userdata is: ", isUserInfoComplete);
+    fetchStudentRecords(userEmail, setIsUserInfoComplete);
+  }, [loginInfo]);
+
+  React.useEffect(() => {
+    console.log("isUserInfoComplete :", isUserInfoComplete);
+    if (isUserInfoComplete) {
+      return history.push("/my-missions");
+    }
+  }, [isUserInfoComplete]);
 
   React.useEffect(() => {
     const token = JSON.parse(localStorage.getItem("token"));

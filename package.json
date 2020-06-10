@@ -8,6 +8,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "airtable": "^0.8.1",
     "jest-styled-components": "^7.0.2",
     "netlify-identity-widget": "^1.6.0",
     "react": "^16.13.1",
