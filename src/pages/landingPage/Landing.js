@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Links from "../../components/global/links/Links";
 import Heading from "../../components/global/heading/Heading";
 import { useHistory } from "react-router-dom";
@@ -14,7 +15,9 @@ const Landing = () => {
     <LandingContainer>
       <Heading>Enterprise Adventure</Heading>
       <LandingWrapper>
-        <Links href="/about">Learn More About the App</Links>
+        <Link to="/about">
+          <Links>Learn More About the App</Links>
+        </Link>
         <TextButton
           text={"Join the Movement!"}
           onClick={() => {
