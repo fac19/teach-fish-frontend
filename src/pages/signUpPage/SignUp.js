@@ -42,16 +42,13 @@ const SignUp = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const response = await fetch(
-      "../../../.netlify/functions/post-student/post-student.js",
-      {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(form),
+    await fetch("../../../.netlify/functions/post-student/post-student.js", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
       },
-    );
+      body: JSON.stringify(form),
+    });
     history.push("/my-missions");
   };
 
