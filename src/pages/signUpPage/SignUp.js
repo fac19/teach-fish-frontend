@@ -9,11 +9,11 @@ import DateInput from "../../components/global/forms/dateInput/DateInput";
 import { TextButton } from "../../components/global/buttons/Buttons";
 import { FormContainer, FormInputWrapper } from "./SignUp.style";
 import { AppContext } from "../../utils/AppContext";
-import fetchStudentRecords from "../../utils/fetch-data";
+// import fetchStudentRecords from "../../utils/fetch-data";
 
 const SignUp = () => {
-  // const { loginInfo, setLoginInfo } = useContext(AppContext);
-  // const { isUserInfoComplete, setIsUserInfoComplete } = useContext(AppContext);
+  const { loginInfo, setLoginInfo } = useContext(AppContext);
+  const { isUserInfoComplete, setIsUserInfoComplete } = useContext(AppContext);
 
   const history = useHistory();
   const token = JSON.parse(localStorage.getItem("token"));
@@ -50,42 +50,53 @@ const SignUp = () => {
         body: JSON.stringify(form),
       },
     );
-
     const final = await response.json();
-
     console.log(final);
   };
 
   // Retreive data from airtable, then check if user is already registered with all neccessary information
-  // React.useEffect(() => {
-  // get user email from state
-  //   let userEmail = loginInfo.email;
-  //   // pass on email as a param to the database query
-  //   // let userDataAirtable = fetchStudentRecords(userEmail);
-  //   console.log("userdata is: ", isUserInfoComplete);
-  //   fetchStudentRecords(userEmail, setIsUserInfoComplete);
-  // }, [loginInfo]);
+  React.useEffect(() => {
+    // get user email from state
+    let userEmail = loginInfo.email;
+    console.log("in useEffect userEmail is: ", userEmail);
+    // pass on email as a param to the database query
+    // let userDataAirtable = fetchStudentRecords(userEmail);
+    console.log("userdata is: ", isUserInfoComplete);
 
-  // React.useEffect(() => {
-  //   console.log("isUserInfoComplete :", isUserInfoComplete);
-  //   if (isUserInfoComplete) {
-  //     return history.push("/my-missions");
-  //   }
-  // }, [isUserInfoComplete]);
+    // fetch(`../../../.netlify/functions/fetch-student/fetch-student.js/`, {
+    //   method: "POST",
+    //   headers: {
+    //     "content-type": "application/json",
+    //   },
+    //   body: JSON.stringify({ email: userEmail }),
+    // }).then((data) => console.log("we got back from the fetch: ", data));
+    fetch(`../../../.netlify/functions/fetch-student/fetch-student.js?`)
+      .json()
+      .then((data) => console.log("we got back from the fetch: ", data));
 
-  // React.useEffect(() => {
-  //   const token = JSON.parse(localStorage.getItem("token"));
-  //   // console.log(token.email, token.full_name);
+    //   fetchStudentRecords(userEmail, setIsUserInfoComplete);
+  }, [loginInfo]);
 
-  //   if (token) {
-  //     setLoginInfo({
-  //       email: token.email,
-  //       name: token.full_name,
-  //     });
-  //   }
-  // }, [setLoginInfo]);
+  React.useEffect(() => {
+    console.log("isUserInfoComplete :", isUserInfoComplete);
+    if (isUserInfoComplete) {
+      return history.push("/my-missions");
+    }
+  }, [isUserInfoComplete]);
 
-  // console.log(loginInfo);
+  React.useEffect(() => {
+    const token = JSON.parse(localStorage.getItem("token"));
+    // console.log(token.email, token.full_name);
+
+    if (token) {
+      setLoginInfo({
+        email: token.email,
+        name: token.full_name,
+      });
+    }
+  }, [setLoginInfo]);
+
+  console.log(loginInfo);
 
   return (
     <>
