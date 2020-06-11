@@ -10,7 +10,7 @@ const About = () => {
   const history = useHistory();
   return (
     <>
-      <BackIcon />
+      <BackIcon to={"/"} />
       <Heading>About the App</Heading>
       <AboutWrapper>
         <Text>
