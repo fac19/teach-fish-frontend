@@ -4,8 +4,20 @@ const AppContext = createContext();
 
 function AppContextProvider(props) {
   const [userInfo, setUserInfo] = useState();
+  const [loginInfo, setLoginInfo] = useState({
+    name: "",
+    email: "",
+  });
+  const [isUserInfoComplete, setIsUserInfoComplete] = useState(false);
 
-  const providerValue = { userInfo, setUserInfo };
+  const providerValue = {
+    userInfo,
+    setUserInfo,
+    loginInfo,
+    setLoginInfo,
+    isUserInfoComplete,
+    setIsUserInfoComplete,
+  };
 
   return (
     <AppContext.Provider value={providerValue}>

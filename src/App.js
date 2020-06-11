@@ -61,16 +61,11 @@ const App = () => {
               path="/my-profile"
               component={auth(MyProfile, netlifyIdentity.currentUser())}
             />
-
             <Route
               path="/my-missions"
-              component={() => (
-                <>
-                  <Navbar />
-                  <MyMissions />
-                </>
-              )}
+              component={auth(MyMissions, netlifyIdentity.currentUser())}
             />
+            {/* <Route path="/my-missions" component={() => <MyMissions />} /> */}
             <Route path="/mission/:number" component={() => <Mission />} />
           </Switch>
         </Router>
