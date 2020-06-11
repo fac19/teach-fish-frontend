@@ -13,49 +13,51 @@ exports.handler = async (event, context) => {
   let data = [];
 
   await base("Students")
-    // .select({
-    //   maxRecords: 100,
-    //   view: "Grid view",
-    //   // filterByFormula: `{Email} = "${email}"`,
-    //   // //   filterByFormula=Email=`"${email}"`
-    // })
-    // .eachPage(
-    //   function page(records, fetchNextPage) {
-    //     // This function (`page`) will get called for each page of records.
-
-    //     records.forEach(function (record) {
-    //       console.log("Retrieved", record.get("Email"));
-    //       let user = record.get("Email");
-    //       // changeStateFunction(user);
-    //       return user;
-    //     });
-    //   },
-    //   function done(err) {
-    //     if (err) {
-    //       //   console.error(err);
-    //       return `here is error: ${err}`;
-    //     }
-    //   },
-    // );
     .select({
       maxRecords: 100,
       view: "Grid view",
+      filterByFormula: `{Email} = "${email}"`,
+      //   filterByFormula=Email=`"${email}"`
     })
-    .firstPage()
-    .then((records) => {
-      records.forEach((record) => {
-        data.push(record.fields);
-      });
-    })
-    .catch((err) => {
-      console.log(err.status); // only visible in netlify functions log when running in prod
-    });
+    .eachPage(
+      function page(records, fetchNextPage) {
+        // This function (`page`) will get called for each page of records.
+
+        records.forEach(function (record) {
+          console.log("Retrieved", record.get("Email"));
+          let user = record.get("Email");
+          // changeStateFunction(user);
+          data.push(user);
+          // return user;
+        });
+      },
+      function done(err) {
+        if (err) {
+          //   console.error(err);
+          return `here is error: ${err}`;
+        }
+      },
+    );
+  // .select({
+  //   maxRecords: 100,
+  //   view: "Grid view",
+  // })
+  // .firstPage()
+  // .then((records) => {
+  //   records.forEach((record) => {
+  //     data.push(record.fields);
+  //   });
+  // })
+  // .catch((err) => {
+  //   console.log(err.status); // only visible in netlify functions log when running in prod
+  // });
 
   try {
     // const subject = event.queryStringParameters.name || "World";
     return {
       statusCode: 200,
-      body: JSON.stringify({ message: `Data not created` }),
+      body: JSON.stringify(data),
+      message: "This should have the data",
       // // more keys you can return:
       // headers: { "headerName": "headerValue", ... },
       // isBase64Encoded: true,

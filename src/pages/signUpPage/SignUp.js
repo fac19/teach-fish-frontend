@@ -70,9 +70,9 @@ const SignUp = () => {
     //   },
     //   body: JSON.stringify({ email: userEmail }),
     // }).then((data) => console.log("we got back from the fetch: ", data));
-    fetch(`../../../.netlify/functions/fetch-student/fetch-student.js?`)
-      .json()
-      .then((data) => console.log("we got back from the fetch: ", data));
+    fetch(
+      `../../../.netlify/functions/fetch-student/fetch-student.js?email=${userEmail}`,
+    ).then((data) => console.log("we got back from the fetch: ", data));
 
     //   fetchStudentRecords(userEmail, setIsUserInfoComplete);
   }, [loginInfo]);
