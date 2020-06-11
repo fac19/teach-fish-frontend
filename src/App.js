@@ -28,13 +28,11 @@ const App = () => {
   React.useEffect(() => {
     // const user = localStorage.getItem("gotrue.user");
     const user = netlifyIdentity.currentUser();
-    console.log("user ", user);
     // console.log("app => user", user.token);
     // console.log(JSON.parse(user));
 
     if (user) {
       setUserInfo({ user: user });
-      console.log(userInfo);
     } else {
       loginUser();
     }
