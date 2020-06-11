@@ -29,7 +29,7 @@ const BackIcon = (props) => {
   return (
     <BackButton
       aria-label="Go back to previous page"
-      onClick={() => history.goBack()}>
+      onClick={() => history.push(props.to)}>
       <ArrowBackIcon className={classes.root} />
     </BackButton>
   );

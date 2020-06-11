@@ -7,7 +7,7 @@ import { Text, AboutWrapper } from "./About.style";
 const About = () => {
   return (
     <>
-      <BackIcon />
+      <BackIcon to={"/"} />
       <Heading>About the App</Heading>
       <AboutWrapper>
         <Text>
