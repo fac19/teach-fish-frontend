@@ -21,7 +21,6 @@ exports[`TextArea component is styled 1`] = `
 >
   <textarea
     className="c1"
-    name="textarea"
     placeholder="Please type your answer here..."
   />
 </label>
