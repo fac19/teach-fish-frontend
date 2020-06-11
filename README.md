@@ -4,7 +4,7 @@
 
 ### Weeks 14-16 Tech For Better Project
 
-- A web application built for education charity [Teach A Man To Fish](https://www.teachamantofish.org.uk/) aimed at creating a personal learning journey for secondary school students that want to develop entrepreneurial skills.
+- A web application built for education charity [Teach A Man To Fish](https://www.teachamantofish.org.uk/) aimed at creating a personal learning journey for secondary school students who want to develop entrepreneurial skills as individuals.
 - The app will allow users to sign up for an account and complete "missions" that each teach a different "superpower" that is essential to success in school, work and in life.
 - The app will include information on each superpower and mission that explains the learning outcomes to the users.
 - The users can complete missions by uploading images of specified work and writing reflections on their learning experience.
@@ -23,7 +23,7 @@ In this sprint we have completed:
 - [x] Set up React Router
 - [x] Sign up and login with Netlify Identity Widget
 - [x] Redirect to a form after signing in that requests more information from the user (posts to AirTable API)
-- [x] Built React compontents for headings, links, form elements, buttons, navbar, back icon
+- [x] Built React components for headings, links, form elements, buttons, navbar, back icon
 
 ---
 
