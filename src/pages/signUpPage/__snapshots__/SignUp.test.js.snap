@@ -67,6 +67,7 @@ Array [
 
 <form
     className="c0"
+    onSubmit={[Function]}
   >
     <div
       className="c1"
@@ -80,6 +81,7 @@ Array [
       <input
         id="dob"
         name="dob"
+        onChange={[Function]}
         type="date"
       />
     </div>
@@ -96,6 +98,7 @@ Array [
         defaultValue="select-option"
         id="country"
         name="country"
+        onChange={[Function]}
         required={true}
       >
         <option
@@ -134,6 +137,7 @@ Array [
         defaultValue="select-option"
         id="gender"
         name="gender"
+        onChange={[Function]}
         required={true}
       >
         <option
@@ -143,22 +147,22 @@ Array [
           Select option
         </option>
         <option
-          value="female"
+          value="Female"
         >
           Female
         </option>
         <option
-          value="male"
+          value="Male"
         >
           Male
         </option>
         <option
-          value="other"
+          value="Other"
         >
           Other
         </option>
         <option
-          value="undisclosed"
+          value="Prefer Not To Say"
         >
           Prefer not to say
         </option>

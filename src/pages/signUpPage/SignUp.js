@@ -12,15 +12,19 @@ import { AppContext } from "../../utils/AppContext";
 import fetchStudentRecords from "../../utils/fetch-data";
 
 const SignUp = () => {
-  const { loginInfo, setLoginInfo } = useContext(AppContext);
-  const { isUserInfoComplete, setIsUserInfoComplete } = useContext(AppContext);
+  // const { loginInfo, setLoginInfo } = useContext(AppContext);
+  // const { isUserInfoComplete, setIsUserInfoComplete } = useContext(AppContext);
 
   const history = useHistory();
   const token = JSON.parse(localStorage.getItem("token"));
+  // const name = "";
+  // const email = "";
+  const name = token ? token.full_name : "";
+  const email = token ? token.email : "";
 
   const [form, setForm] = React.useState({
-    Name: token.full_name,
-    Email: token.email,
+    Name: name,
+    Email: email,
     dob: "",
     gender: "",
     country: "",
