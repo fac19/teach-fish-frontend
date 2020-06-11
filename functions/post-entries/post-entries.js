@@ -10,26 +10,25 @@ exports.handler = async (event, context) => {
     apiKey: AIRTABLE_API_KEY,
   }).base(AIRTABLE_BASE_ID);
 
-  const studentTable = base("Students");
+  const entriesTable = base("Entries");
 
   const form = JSON.parse(event.body);
 
   let data = [];
-  await studentTable
+  await entriesTable
     .create([
       {
         fields: {
-          Name: form.Name,
-          Gender: form.gender,
+          "Mission Number": 1, // Change later by getting number from URL or state
           Email: form.Email,
-          "Current level": 0,
-          DOB: form.dob,
-          Country: form.country,
+          "Task 2a": form.Task2a,
+          "Task 2b": form.Task2b,
+          "Task 2c": form.Task2c,
         },
       },
     ])
-    .then((students) => {
-      students.forEach((student) => data.push(student.fields));
+    .then((entries) => {
+      entries.forEach((entry) => data.push(entry.fields));
     })
     .catch((err) => {
       data = err;
