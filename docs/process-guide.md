@@ -49,7 +49,7 @@ _Tuesday_: 8 Points Total
 
 _Wednesday_: 4 Points Total
 
-_Thursday_: 8 Points Total
+_Thursday_: 6 Points Total
 
 **Sprint Total: 26 Points**
 
