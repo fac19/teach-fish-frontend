@@ -12,13 +12,17 @@ import { AppContext } from "../../utils/AppContext";
 // import fetchStudentRecords from "../../utils/fetch-data";
 
 const SignUp = () => {
-  const { loginInfo, setLoginInfo } = useContext(AppContext);
   const { isUserInfoComplete, setIsUserInfoComplete } = useContext(AppContext);
+  const { loginInfo, setLoginInfo } = useContext(AppContext);
+  // const { isUserInfoComplete, setIsUserInfoComplete } = React.useState();
+  // const { loginInfo, setLoginInfo } = React.useState({
+  //   name: "",
+  //   email: "",
+  // });
 
   const history = useHistory();
   const token = JSON.parse(localStorage.getItem("token"));
-  // const name = "";
-  // const email = "";
+
   const name = token ? token.full_name : "";
   const email = token ? token.email : "";
 
@@ -34,8 +38,6 @@ const SignUp = () => {
     const { name, value } = event.target;
     setForm({ ...form, [name]: value });
   };
-
-  // console.log(form);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -71,7 +73,6 @@ const SignUp = () => {
   }, [loginInfo]);
 
   React.useEffect(() => {
-    // console.log("isUserInfoComplete :", isUserInfoComplete);
     if (isUserInfoComplete) {
       return history.push("/my-missions");
     }
@@ -79,8 +80,6 @@ const SignUp = () => {
 
   React.useEffect(() => {
     const token = JSON.parse(localStorage.getItem("token"));
-    // console.log(token.email, token.full_name);
-
     if (token) {
       setLoginInfo({
         email: token.email,
@@ -88,8 +87,6 @@ const SignUp = () => {
       });
     }
   }, [setLoginInfo]);
-
-  // console.log(loginInfo);
 
   return (
     <>
