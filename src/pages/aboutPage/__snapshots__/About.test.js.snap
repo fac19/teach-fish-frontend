@@ -80,6 +80,7 @@ Array [
       className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-root-2"
       disabled={false}
       onBlur={[Function]}
+      onClick={[Function]}
       onDragLeave={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
