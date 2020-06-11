@@ -37,21 +37,21 @@ Co-authored-by: Hannah Gooding [hannah.gooding@yahoo.com](mailto:hannah.gooding@
 
 ## Issue Estimation per 1 Week Sprint
 
-1 Point = 1 Pair, Quarter Day
+1 Point = 1 Pair, Quarter Day (1.5h)
 
-2 Points = 1 Pair, Half Day
+2 Points = 1 Pair, Half Day (3h)
 
-4 Points = 1 Pair, Whole Day
+4 Points = 1 Pair, Whole Day (6h)
 
-_Monday_: 6 Points Total
+_Monday_: 8 Points Total
 
-_Tuesday_: 6 Points Total
+_Tuesday_: 8 Points Total
 
-_Wednesday_: 3 Points Total
+_Wednesday_: 4 Points Total
 
-_Thursday_: 6 Points Total
+_Thursday_: 8 Points Total
 
-**Sprint Total: 21 Points**
+**Sprint Total: 26 Points**
 
 ## Stand Ups
 
