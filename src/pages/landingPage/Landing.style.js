@@ -15,6 +15,7 @@ const LandingWrapper = styled.section`
   text-align: center;
   justify-content: space-around;
   height: 100%;
+  width: 100%;
 `;
 
 const StyledImg = styled.img`
