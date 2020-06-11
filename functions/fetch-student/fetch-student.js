@@ -19,55 +19,48 @@ exports.handler = async (event, context) => {
       filterByFormula: `{Email} = "${email}"`,
       //   filterByFormula=Email=`"${email}"`
     })
-    .eachPage(
-      function page(records, fetchNextPage) {
-        // This function (`page`) will get called for each page of records.
+    .firstPage()
+    .then((records) => {
+      records.forEach((record) => {
+        console.log("email is :", email, "record is :", record);
+        data.push(record.fields.Email);
+      });
+    })
+    .catch((err) => {
+      console.log(err.status); // only visible in netlify functions log when running in prod
+    });
+  // .eachPage(
+  //   function page(records, fetchNextPage) {
+  //     // This function (`page`) will get called for each page of records.
 
-        records.forEach(function (record) {
-          console.log("Retrieved", record.get("Email"));
-          let user = record.get("Email");
-          // changeStateFunction(user);
-          data.push(user);
-          // return user;
-        });
-      },
-      function done(err) {
-        if (err) {
-          //   console.error(err);
-          return `here is error: ${err}`;
-        }
-      },
-    );
-  // .select({
-  //   maxRecords: 100,
-  //   view: "Grid view",
-  // })
-  // .firstPage()
-  // .then((records) => {
-  //   records.forEach((record) => {
-  //     data.push(record.fields);
-  //   });
-  // })
-  // .catch((err) => {
-  //   console.log(err.status); // only visible in netlify functions log when running in prod
-  // });
+  //     records.forEach(function (record) {
+  //       console.log("Retrieved", record.get("Email"));
+  //       let user = record.get("Email");
+  //       // changeStateFunction(user);
+  //       data.push(user);
+  //       console.log(data);
+  //       // return user;
+  //     });
+  //   },
+  //   function done(err) {
+  //     if (err) {
+  //       //   console.error(err);
+  //       return `here is error: ${err}`;
+  //     }
+  //   },
+  // );
 
   try {
-    // const subject = event.queryStringParameters.name || "World";
+    console.log("data ", data);
     return {
       statusCode: 200,
-      body: JSON.stringify(data),
-      message: "This should have the data",
-      // // more keys you can return:
-      // headers: { "headerName": "headerValue", ... },
-      // isBase64Encoded: true,
+      body: JSON.stringify(data[0]),
+      headers: {
+        "content-type": "application/json",
+      },
     };
   } catch (err) {
-    return {
-      statusCode: 500,
-      body: err.toString(),
-      message: `Email address ${email} already in use`,
-    };
+    return { statusCode: 500, body: err.toString() };
   }
 };
 

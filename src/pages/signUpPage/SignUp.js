@@ -35,7 +35,7 @@ const SignUp = () => {
     setForm({ ...form, [name]: value });
   };
 
-  console.log(form);
+  // console.log(form);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -50,35 +50,28 @@ const SignUp = () => {
         body: JSON.stringify(form),
       },
     );
-    const final = await response.json();
-    console.log(final);
+    history.push("/my-missions");
   };
 
   // Retreive data from airtable, then check if user is already registered with all neccessary information
   React.useEffect(() => {
     // get user email from state
     let userEmail = loginInfo.email;
-    console.log("in useEffect userEmail is: ", userEmail);
-    // pass on email as a param to the database query
-    // let userDataAirtable = fetchStudentRecords(userEmail);
-    console.log("userdata is: ", isUserInfoComplete);
 
-    // fetch(`../../../.netlify/functions/fetch-student/fetch-student.js/`, {
-    //   method: "POST",
-    //   headers: {
-    //     "content-type": "application/json",
-    //   },
-    //   body: JSON.stringify({ email: userEmail }),
-    // }).then((data) => console.log("we got back from the fetch: ", data));
-    fetch(
-      `../../../.netlify/functions/fetch-student/fetch-student.js?email=${userEmail}`,
-    ).then((data) => console.log("we got back from the fetch: ", data));
+    const func = async () => {
+      const post = await fetch(
+        `../../../.netlify/functions/fetch-student/fetch-student.js?email=${userEmail}`,
+      );
 
-    //   fetchStudentRecords(userEmail, setIsUserInfoComplete);
+      const finalFetch = await post.json();
+      setIsUserInfoComplete(finalFetch);
+    };
+
+    func();
   }, [loginInfo]);
 
   React.useEffect(() => {
-    console.log("isUserInfoComplete :", isUserInfoComplete);
+    // console.log("isUserInfoComplete :", isUserInfoComplete);
     if (isUserInfoComplete) {
       return history.push("/my-missions");
     }
@@ -96,7 +89,7 @@ const SignUp = () => {
     }
   }, [setLoginInfo]);
 
-  console.log(loginInfo);
+  // console.log(loginInfo);
 
   return (
     <>
@@ -115,15 +108,6 @@ const SignUp = () => {
       </FormContainer>
     </>
   );
-
-  // query the airtable to see if we have user's details in our database
-
-  // if we do not
-  // render the signup p2 form to collect the data
-  // send and save the data on the airtable
-
-  // if we do have the details
-  // redirect to the mission page
 };
 
 export default SignUp;
