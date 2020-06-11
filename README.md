@@ -1,8 +1,29 @@
-# Teach A Man To Fish - Enterprise Adventures App
+# Teach A Man To Fish - Enterprise Adventure App
 
-## Description
+## Project Description
 
-Weeks 14-16 Tech For Better Project
+### Weeks 14-16 Tech For Better Project
+
+- A web application built for education charity [Teach A Man To Fish](https://www.teachamantofish.org.uk/) aimed at creating a personal learning journey for secondary school students that want to develop entrepreneurial skills.
+- The app will allow users to sign up for an account and complete "missions" that each teach a different "superpower" that is essential to success in school, work and in life.
+- The app will include information on each superpower and mission that explains the learning outcomes to the users.
+- The users can complete missions by uploading images of specified work and writing reflections on their learning experience.
+- Once a user completes a mission, the next mission becomes "unlocked" and available to read about and work on.
+
+### User Stories
+- The user stories for our MVP (Minimum Viable Product) can be found [here](https://github.com/fac19/teach-fish-frontend/blob/master/docs/user-stories.md).
+
+### User Flow
+- The main user flow of our application can be found [here](https://github.com/fac19/teach-fish-frontend/blob/master/docs/user-flow.md).
+
+---
+
+## Sprint 1: Code Review
+In this sprint we have completed:
+- [x] Set up React Router
+- [x] Sign up and login with Netlify Identity Widget
+- [x] Redirect to a form after signing in that requests more information from the user (posts to AirTable API)
+- [x] Built React compontents for headings, links, form elements, buttons, navbar, back icon
 
 ---
 
@@ -23,11 +44,13 @@ Deployed on [Netlify](https://enterprise-adventure.netlify.app/)
 
 ### [Tom](https://github.com/tacotoemeck) - _QA lead_
 
+Our team Process Guide can be found [here](https://github.com/fac19/teach-fish-frontend/blob/master/docs/process-guide.md).
+
 ---
 
 ## No local installation
 
-We are using Netlify CLI Dev to load our environment variables so it is not possible for code reviewers to run the server locally without access to our Netlify account
+We are using Netlify CLI Dev to load our environment variables so it is not possible for code reviewers to run the server locally without access to our Netlify account.
 
 ## How to run tests
 
@@ -48,7 +71,7 @@ We are using Netlify CLI Dev to load our environment variables so it is not poss
 - Jest
 - Codecov
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ### Tools Used
 
