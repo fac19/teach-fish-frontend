@@ -13,6 +13,17 @@ const LandingWrapper = styled.section`
   display: flex;
   flex-direction: column;
   text-align: center;
+  justify-content: space-around;
+  height: 100%;
 `;
 
-export { LandingContainer, LandingWrapper };
+const StyledImg = styled.img`
+  padding: 1rem;
+  width: 6rem;
+  align-self: center;
+
+  @media (min-width: 768px) {
+    width: 8rem;
+`;
+
+export { LandingContainer, LandingWrapper, StyledImg };
