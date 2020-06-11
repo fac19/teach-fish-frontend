@@ -22,7 +22,7 @@ exports.handler = async (event, context) => {
     .firstPage()
     .then((records) => {
       records.forEach((record) => {
-        console.log("email is :", email, "record is :", record);
+        // console.log("email is :", email, "record is :", record);
         data.push(record.fields.Email);
       });
     })
@@ -51,7 +51,7 @@ exports.handler = async (event, context) => {
   // );
 
   try {
-    console.log("data ", data);
+    // console.log("data ", data);
     return {
       statusCode: 200,
       body: JSON.stringify(data[0]),
