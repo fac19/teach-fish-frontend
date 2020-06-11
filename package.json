@@ -23,6 +23,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --updateSnapshot",
+    "test:all": "react-scripts test --updateSnapshot --watchAll",
     "eject": "react-scripts eject",
     "prettier": "./node_modules/.bin/prettier . --write"
   },
