@@ -4,7 +4,7 @@ exports[`Landing page component is styled 1`] = `
 .c1 {
   font-family: "Josefin Sans",sans-serif;
   font-size: 2rem;
-  color: navy;
+  color: #032049;
   text-align: center;
 }
 
@@ -37,15 +37,34 @@ exports[`Landing page component is styled 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   text-align: center;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  height: 100%;
 }
 
 .c3 {
+  padding: 1rem;
+  width: 6rem;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.c4 {
   text-align: center;
 }
 
 @media (min-width:600px) {
   .c1 {
     font-size: 4rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c3 {
+    width: 8rem;
   }
 }
 
@@ -60,6 +79,11 @@ exports[`Landing page component is styled 1`] = `
   <section
     className="c2"
   >
+    <img
+      alt="rocket"
+      className="c3"
+      src="rocket.svg"
+    />
     <a
       className="makeStyles-links-1"
       href="/about"
@@ -93,7 +117,7 @@ exports[`Landing page component is styled 1`] = `
     </button>
   </section>
   <div
-    className="c3"
+    className="c4"
   >
     <img
       alt="Teach a Man to Fish logo"

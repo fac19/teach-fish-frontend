@@ -46,5 +46,5 @@ test("TAMTF logo renders correctly", () => {
       <Landing />
     </Router>,
   );
-  screen.getByRole("img");
+  screen.getByAltText("Teach a Man to Fish logo");
 });

@@ -1,7 +1,7 @@
 const bgColour = "white";
-const fontColour = "navy";
+const fontColour = "#032049";
 const primaryColour = "#88D364";
-const secondaryColour = "pink";
+const secondaryColour = "#00C2F0";
 const accentColour = "#E55982";
 const linkColour = "#026CB6";
 

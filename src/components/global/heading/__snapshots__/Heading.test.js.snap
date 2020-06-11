@@ -4,7 +4,7 @@ exports[`Heading component is styled 1`] = `
 .c0 {
   font-family: "Josefin Sans",sans-serif;
   font-size: 2rem;
-  color: navy;
+  color: #032049;
   text-align: center;
 }
 

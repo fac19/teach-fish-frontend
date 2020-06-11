@@ -6,7 +6,7 @@ exports[`Navbar component is styled 1`] = `
   top: 0;
   left: 0;
   width: 100vw;
-  background-color: navy;
+  background-color: #00C2F0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
