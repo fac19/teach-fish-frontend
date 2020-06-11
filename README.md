@@ -1,5 +1,5 @@
 Deployed on Netlify https://enterprise-adventure.netlify.app/
-https://www.linkedin.com/jobs/view/1866277360/?alternateChannel=search&refId=1ce29d5c-fafb-42a1-bdc4-85b4211983b5&trk=flagship3_search_srp_jobs
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0fe3860c-8945-41bf-933b-b3e52cac4cda/deploy-status)](https://app.netlify.com/sites/enterprise-adventure/deploys)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
