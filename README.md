@@ -1,78 +1,74 @@
-Deployed on Netlify https://enterprise-adventure.netlify.app/
+# Teach A Man To Fish - Enterprise Adventures App
+
+## Description
+
+Weeks 14-16 Tech For Better Project
+
+---
+
+## Build Status
+
+Deployed on [Netlify](https://enterprise-adventure.netlify.app/)  
 [![Netlify Status](https://api.netlify.com/api/v1/badges/0fe3860c-8945-41bf-933b-b3e52cac4cda/deploy-status)](https://app.netlify.com/sites/enterprise-adventure/deploys)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+## The team
 
-In the project directory, you can run:
+### [Hannah](https://github.com/hannahgooding) - _Scrum Master_
 
-### `npm start`
+### [Giovanna](https://github.com/glrta) - _UX/UI lead_
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### [Hettie](https://github.com/HettieM) - _DevOps lead_
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### [Tom](https://github.com/tacotoemeck) - _QA lead_
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## No local installation
 
-### `npm run build`
+We are using Netlify CLI Dev to load our environment variables so it is not possible for code reviewers to run the server locally without access to our Netlify account
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## How to run tests
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+1. `git clone` this repo
+2. Run `npm install` in your terminal to install app dependencies
+3. Run `npm run test:all` in your terminal to run tests
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Project Tech Stack
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Technologies Used
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- React.js
+- Node.js
+- AirTable API
+- Travis CI
+- Jest
+- Codecov
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Tools Used
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- Project board, sprint planning and issues managed on Jira
+- Project ideas developed collaboratively with our Product Owner in Miro
+- Prototyped in [Figma](https://www.figma.com/file/2kvHdWKEbafpgLFgjR3w5d/teach-fish?node-id=0%3A1)
 
 ### Dependencies Installed
 
-[React Router Dom](https://www.npmjs.com/package/react-router-dom) - To route app
-Netlify Identity Widget -
+[React Router Dom](https://www.npmjs.com/package/react-router-dom)  
+[React Test Renderer](https://www.npmjs.com/package/react-test-renderer)  
+[Styled Components](https://styled-components.com)  
+[Material UI](https://material-ui.com/)  
+[Jest Styled Components](https://www.npmjs.com/package/jest-styled-components)  
+[Airtable.js](https://www.npmjs.com/package/airtable)  
+[Netlify Identity Widget](https://www.npmjs.com/package/netlify-identity-widget)  
+[Netlify CLI](https://www.npmjs.com/package/netlify-cli)
 
 ### Dev Dependencies Installed
+
+[Husky](https://www.npmjs.com/package/husky)  
+[Prettier](https://www.npmjs.com/package/prettier)  
+[Pretty Quick](https://www.npmjs.com/package/pretty-quick)
