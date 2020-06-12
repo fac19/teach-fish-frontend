@@ -19,7 +19,7 @@ const About = () => {
         </Text>
         <TextButton
           type={"button"}
-          text={"Sign Up and Joing the Movement!"}
+          text={"Sign Up and Join the Movement!"}
           onClick={() => {
             netlifyIdentity.open();
             history.push(`/signup`);
