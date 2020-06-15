@@ -1,5 +1,4 @@
 import React from "react";
-import Heading from "../../../components/global/heading/Heading";
 import Subheading from "../../../components/global/subheading/Subheading";
 import Paragraph from "../../../components/global/paragraph/Paragraph";
 import {
@@ -7,21 +6,28 @@ import {
   SuperPowerIconContainer,
   SuperPowerTitle,
   SuperPowerVideoContainer,
+  GetSetContainer,
+  VideoTitle,
+  SuperPowerIcon,
 } from "./GetSet.style";
 import { TextButton } from "../../../components/global/buttons/Buttons";
 
 export default function GetSet(props) {
   return (
-    <>
-      <Heading>
-        Mission {props.missionNumber}: {props.missionName}
-      </Heading>
+    <GetSetContainer>
+      <Subheading>
+        Mission {props.missionNumber}: <br /> {props.missionName}
+      </Subheading>
       <SuperPowerBox>
-        <SuperPowerIconContainer></SuperPowerIconContainer>
-        <SuperPowerTitle>Superpower: {props.superpower}</SuperPowerTitle>
+        <SuperPowerIconContainer>
+          <SuperPowerIcon src={props.superpowerIcon} />
+          <SuperPowerTitle>
+            Superpower: <br /> {props.superpower}
+          </SuperPowerTitle>
+        </SuperPowerIconContainer>
       </SuperPowerBox>
       <Paragraph>{props.getSet}</Paragraph>
-      <Subheading>Introduction Video</Subheading>
+      <VideoTitle>Introduction Video</VideoTitle>
       <SuperPowerVideoContainer>
         <iframe
           width="560"
@@ -36,6 +42,6 @@ export default function GetSet(props) {
         text={"Click to start"}
         onClick={() => props.setMissionState("ready")}
       />
-    </>
+    </GetSetContainer>
   );
 }
