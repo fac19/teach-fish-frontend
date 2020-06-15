@@ -9,6 +9,7 @@ function AppContextProvider(props) {
     email: "",
   });
   const [isUserInfoComplete, setIsUserInfoComplete] = useState(false);
+  const [missionState, setMissionState] = useState("get");
 
   const providerValue = {
     userInfo,
@@ -17,6 +18,8 @@ function AppContextProvider(props) {
     setLoginInfo,
     isUserInfoComplete,
     setIsUserInfoComplete,
+    missionState,
+    setMissionState,
   };
 
   return (
