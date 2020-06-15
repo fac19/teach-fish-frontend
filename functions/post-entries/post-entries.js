@@ -21,6 +21,7 @@ exports.handler = async (event, context) => {
         fields: {
           "Mission Number": 1, // Change later by getting number from URL or state
           Email: form.Email,
+          "Task 1 URL": form.Task1,
           "Task 2a": form.Task2a,
           "Task 2b": form.Task2b,
           "Task 2c": form.Task2c,

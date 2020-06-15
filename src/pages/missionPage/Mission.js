@@ -15,6 +15,7 @@ const MissionForm = () => {
 
   const [form, setForm] = React.useState({
     Email: email,
+    Task1: "",
     Task2a: "",
     Task2b: "",
     Task2c: "",
