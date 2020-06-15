@@ -25,7 +25,8 @@
     "test": "react-scripts test --updateSnapshot",
     "test:all": "react-scripts test --updateSnapshot --watchAll",
     "eject": "react-scripts eject",
-    "prettier": "./node_modules/.bin/prettier . --write"
+    "prettier": "./node_modules/.bin/prettier . --write",
+    "dev": "netlify dev"
   },
   "eslintConfig": {
     "extends": "react-app"
