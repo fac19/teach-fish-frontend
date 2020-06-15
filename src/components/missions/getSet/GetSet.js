@@ -16,7 +16,7 @@ export default function GetSet(props) {
       <Paragraph></Paragraph>
       <SuperPowerBox>
         <SuperPowerIconContainer></SuperPowerIconContainer>
-        <SuperPowerTitle>Supertpower</SuperPowerTitle>
+        <SuperPowerTitle>Superpower</SuperPowerTitle>
       </SuperPowerBox>
       <Subheading>Introduction Video</Subheading>
       <SuperPowerVideoContainer></SuperPowerVideoContainer>
