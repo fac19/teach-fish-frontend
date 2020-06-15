@@ -1,14 +1,27 @@
 import React from "react";
-import { TextButton } from "../../components/global/buttons/Buttons";
-import { FormContainer, FormInputWrapper } from "./MissionForm.style";
-import TextArea from "../../components/global/forms/textArea/TextArea";
 import GetSetReadyGo from "../../components/missions/getSetReadyGo/GetSetReadyGo.js";
-import Steppers from "../../components/missions/steps/Steppers";
 import GetSet from "../../components/missions/getSet/GetSet";
 
 const MissionForm = () => {
   // state goes here
   const [activeStep, setActiveStep] = React.useState(0);
+  const [currentMissionObject, setCurrentMissionObject] = React.useState({});
+  const missionNumber = window.location.pathname.replace("/mission/", "");
+
+  React.useEffect(() => {
+    const func = async () => {
+      const post = await fetch(
+        `../../../.netlify/functions/fetch-mission/fetch-mission.js?missionNumber=${missionNumber}`,
+      );
+
+      await post.json().then((data) => {
+        setCurrentMissionObject(data);
+        // console.log(data)
+      });
+    };
+
+    func();
+  }, [missionNumber]);
 
   const token = JSON.parse(localStorage.getItem("token"));
 
@@ -53,7 +66,13 @@ const MissionForm = () => {
   return (
     <>
       <GetSetReadyGo missionState={missionState} />
-      <GetSet />
+      <GetSet
+        missionNumber={missionNumber}
+        missionName={currentMissionObject["Mission Name"]}
+        superpower={currentMissionObject.Superpower}
+        getSet={currentMissionObject["Get Set"]}
+        video={currentMissionObject.Video}
+      />
     </>
   );
 };

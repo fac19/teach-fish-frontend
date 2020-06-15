@@ -1,4 +1,5 @@
 import React from "react";
+import Heading from "../../../components/global/heading/Heading";
 import Subheading from "../../../components/global/subheading/Subheading";
 import Paragraph from "../../../components/global/paragraph/Paragraph";
 import {
@@ -10,16 +11,29 @@ import {
 import { TextButton } from "../../../components/global/buttons/Buttons";
 
 export default function GetSet(props) {
+  console.log(props);
+
   return (
     <>
-      <Subheading>Mission 1</Subheading>
-      <Paragraph></Paragraph>
+      <Heading>
+        Mission {props.missionNumber}: {props.missionName}
+      </Heading>
       <SuperPowerBox>
         <SuperPowerIconContainer></SuperPowerIconContainer>
-        <SuperPowerTitle>Superpower</SuperPowerTitle>
+        <SuperPowerTitle>Superpower: {props.superpower}</SuperPowerTitle>
       </SuperPowerBox>
+      <Paragraph>{props.getSet}</Paragraph>
       <Subheading>Introduction Video</Subheading>
-      <SuperPowerVideoContainer></SuperPowerVideoContainer>
+      <SuperPowerVideoContainer>
+        <iframe
+          width="560"
+          title="Instructional video"
+          height="315"
+          src={props.video}
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </SuperPowerVideoContainer>
       <TextButton text={"Click to start"} />
     </>
   );

@@ -3,7 +3,7 @@ var Airtable = require("airtable");
 
 exports.handler = async (event, context) => {
   const { AIRTABLE_API_KEY, AIRTABLE_BASE_ID, AIRTABLE_API_URL } = process.env;
-  const email = event.queryStringParameters.email;
+  const missionNumber = event.queryStringParameters.missionNumber;
 
   const base = new Airtable({
     endpointUrl: AIRTABLE_API_URL,
@@ -11,17 +11,17 @@ exports.handler = async (event, context) => {
   }).base(AIRTABLE_BASE_ID);
 
   let data = [];
-
-  await base("Students")
+  console.log("fetch mission reached");
+  await base("Mission")
     .select({
       maxRecords: 100,
       view: "Grid view",
-      filterByFormula: `{Email} = "${email}"`,
+      filterByFormula: `{Mission Number} = "${missionNumber}"`,
     })
     .firstPage()
     .then((records) => {
       records.forEach((record) => {
-        data.push(record.fields.Email);
+        data.push(record.fields);
       });
     })
     .catch((err) => {
