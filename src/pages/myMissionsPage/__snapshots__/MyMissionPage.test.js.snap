@@ -1,0 +1,257 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`My missions page component is styled 1`] = `
+.c2 {
+  font-family: "Josefin Sans",sans-serif;
+  font-size: 2rem;
+  color: #032049;
+  text-align: center;
+}
+
+.c6 {
+  font-family: "Josefin Sans",sans-serif;
+  font-size: 1.5rem;
+  color: #032049;
+  text-align: center;
+}
+
+.c1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background-color: #00C2F0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  z-index: 1000;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  justify-items: center;
+}
+
+.c3 {
+  border-radius: 50%;
+  border: 3px solid grey;
+  max-width: 100px;
+  padding: 1rem;
+  background-color: grey;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c5 {
+  border-radius: 50%;
+  margin-right: 1rem;
+  border: 1px solid grey;
+  height: 3rem;
+  width: 3rem;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+@media (min-width:600px) {
+  .c2 {
+    font-size: 4rem;
+  }
+}
+
+@media (min-width:600px) {
+  .c6 {
+    font-size: 3rem;
+  }
+}
+
+<section
+  className="c0"
+>
+  <nav
+    className="c1"
+  >
+    <a
+      aria-label="My missions"
+      href="/my-missions"
+      onClick={[Function]}
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root makeStyles-root-1"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"
+        />
+      </svg>
+    </a>
+    <a
+      aria-label="My profile"
+      href="/my-profile"
+      id="nav-icon-myProfile"
+      onClick={[Function]}
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root makeStyles-root-1"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+        />
+      </svg>
+    </a>
+    <a
+      aria-label="Logout"
+      href="/"
+      onClick={[Function]}
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root makeStyles-root-1"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5c-1.11 0-2 .9-2 2v4h2V5h14v14H5v-4H3v4c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+        />
+      </svg>
+    </a>
+  </nav>
+  <h1
+    className="c2"
+  >
+    My Missions
+  </h1>
+  <img
+    alt="Profile image"
+    className="c3"
+    src="avatar.svg"
+  />
+  <article
+    className="c4"
+  >
+    <img
+      className="c5"
+      src="mission-one-icon.svg"
+    />
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-root-2"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      <span
+        className="MuiButton-label"
+      >
+        Mission One
+      </span>
+    </button>
+  </article>
+  <article
+    className="c4"
+  >
+    <img
+      className="c5"
+      src="padlock.svg"
+    />
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-root-2 Mui-disabled Mui-disabled"
+      disabled={true}
+      onBlur={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={-1}
+      type="button"
+    >
+      <span
+        className="MuiButton-label"
+      >
+        Mission Two
+      </span>
+    </button>
+  </article>
+  <article
+    className="c4"
+  >
+    <img
+      className="c5"
+      src="padlock.svg"
+    />
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-root-2 Mui-disabled Mui-disabled"
+      disabled={true}
+      onBlur={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={-1}
+      type="button"
+    >
+      <span
+        className="MuiButton-label"
+      >
+        Mission Three
+      </span>
+    </button>
+  </article>
+  <h2
+    className="c6"
+  >
+    More coming soon...
+  </h2>
+</section>
+`;
