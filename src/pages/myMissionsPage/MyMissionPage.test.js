@@ -33,10 +33,10 @@ test("Mission two and three buttons are disabled", () => {
       <MyMissionPage />
     </Router>,
   );
-  //   screen.getByText("MISSION TWO");
-  //   screen.getByText("MISSION TWO");
-
   expect(
     screen.getByText("Mission Two").closest("button").disabled,
+  ).toBeTruthy();
+  expect(
+    screen.getByText("Mission Three").closest("button").disabled,
   ).toBeTruthy();
 });
