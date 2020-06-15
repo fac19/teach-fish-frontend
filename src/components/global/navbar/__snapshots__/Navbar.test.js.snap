@@ -15,6 +15,7 @@ exports[`Navbar component is styled 1`] = `
   -webkit-justify-content: space-around;
   -ms-flex-pack: space-around;
   justify-content: space-around;
+  z-index: 1000;
 }
 
 <nav
