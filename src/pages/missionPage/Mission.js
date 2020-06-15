@@ -50,37 +50,8 @@ const MissionForm = () => {
 
   return (
     <>
-      {/* <Heading>Mission page</Heading> */}
-      {/* <Steppers
-        activeStep={activeStep}
-        setActiveStep={setActiveStep}
-        handleNext={handleNext}
-      /> */}
+      <GetSetReadyGo missionState={missionState} />
       <GetSet />
-      {/* <FormContainer onSubmit={handleSubmit}>
-        <FormInputWrapper>
-          <TextArea
-            name={"Task2a"}
-            label={"My Actions"}
-            onChange={handleChange}
-          />
-        </FormInputWrapper>
-        <FormInputWrapper>
-          <TextArea
-            name={"Task2b"}
-            label={"My Results"}
-            onChange={handleChange}
-          />
-        </FormInputWrapper>
-        <FormInputWrapper>
-          <TextArea
-            name={"Task2c"}
-            label={"My Learning"}
-            onChange={handleChange}
-          />
-        </FormInputWrapper>
-        <TextButton type={"submit"} text={"Get started!"} />
-      </FormContainer> */}
     </>
   );
 };
