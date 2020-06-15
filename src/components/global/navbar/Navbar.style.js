@@ -9,6 +9,7 @@ const Nav = styled.nav`
   background-color: ${secondaryColour};
   display: flex;
   justify-content: space-around;
+  z-index: 1000;
 `;
 
 export default Nav;

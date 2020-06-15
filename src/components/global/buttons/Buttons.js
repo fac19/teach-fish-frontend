@@ -29,7 +29,8 @@ const TextButton = (props) => {
       type={props.type}
       className={classes.root}
       variant="contained"
-      onClick={props.onClick}>
+      onClick={props.onClick}
+      disabled={props.disabled}>
       {props.text}
     </Button>
   );
