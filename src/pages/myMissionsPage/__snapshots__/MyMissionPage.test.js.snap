@@ -13,6 +13,7 @@ exports[`My missions page component is styled 1`] = `
   font-size: 1.5rem;
   color: #032049;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .c1 {
@@ -84,7 +85,7 @@ exports[`My missions page component is styled 1`] = `
 
 @media (min-width:600px) {
   .c6 {
-    font-size: 3rem;
+    font-size: 2.2rem;
   }
 }
 

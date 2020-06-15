@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Paragraph component is styled 1`] = `
+.c0 {
+  text-align: center;
+}
+
+<p
+  className="c0"
+/>
+`;
