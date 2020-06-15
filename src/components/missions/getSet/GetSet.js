@@ -11,8 +11,6 @@ import {
 import { TextButton } from "../../../components/global/buttons/Buttons";
 
 export default function GetSet(props) {
-  console.log(props);
-
   return (
     <>
       <Heading>
@@ -30,11 +28,14 @@ export default function GetSet(props) {
           title="Instructional video"
           height="315"
           src={props.video}
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
+          allowFullScreen></iframe>
       </SuperPowerVideoContainer>
-      <TextButton text={"Click to start"} />
+      <TextButton
+        text={"Click to start"}
+        onClick={() => props.setMissionState("ready")}
+      />
     </>
   );
 }

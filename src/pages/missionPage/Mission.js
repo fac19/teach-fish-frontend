@@ -6,6 +6,8 @@ const MissionForm = () => {
   // state goes here
   const [activeStep, setActiveStep] = React.useState(0);
   const [currentMissionObject, setCurrentMissionObject] = React.useState({});
+  const [missionState, setMissionState] = React.useState("get");
+
   const missionNumber = window.location.pathname.replace("/mission/", "");
 
   React.useEffect(() => {
@@ -61,18 +63,19 @@ const MissionForm = () => {
     await response.json();
   };
 
-  let missionState = "get";
-
   return (
     <>
       <GetSetReadyGo missionState={missionState} />
-      <GetSet
-        missionNumber={missionNumber}
-        missionName={currentMissionObject["Mission Name"]}
-        superpower={currentMissionObject.Superpower}
-        getSet={currentMissionObject["Get Set"]}
-        video={currentMissionObject.Video}
-      />
+      {missionState === "get" && (
+        <GetSet
+          missionNumber={missionNumber}
+          missionName={currentMissionObject["Mission Name"]}
+          superpower={currentMissionObject.Superpower}
+          getSet={currentMissionObject["Get Set"]}
+          video={currentMissionObject.Video}
+          setMissionState={setMissionState}
+        />
+      )}
     </>
   );
 };
