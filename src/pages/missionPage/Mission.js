@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Heading from "../../components/global/heading/Heading";
 import { TextButton } from "../../components/global/buttons/Buttons";
 import { FormContainer, FormInputWrapper } from "./MissionForm.style";
 import TextArea from "../../components/global/forms/textArea/TextArea";
+import Steppers from "../../components/missions/steps/Steppers";
 
 const MissionForm = () => {
+  // state goes here
+  const [activeStep, setActiveStep] = React.useState(0);
+
   const token = JSON.parse(localStorage.getItem("token"));
 
   const email = token ? token.email : "";
@@ -15,6 +19,11 @@ const MissionForm = () => {
     Task2b: "",
     Task2c: "",
   });
+
+  // function for the stepper
+  const handleNext = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  };
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -41,6 +50,11 @@ const MissionForm = () => {
   return (
     <>
       <Heading>Mission page</Heading>
+      <Steppers
+        activeStep={activeStep}
+        setActiveStep={setActiveStep}
+        handleNext={handleNext}
+      />
       <FormContainer onSubmit={handleSubmit}>
         <FormInputWrapper>
           <TextArea
