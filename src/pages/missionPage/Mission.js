@@ -1,14 +1,37 @@
 import React from "react";
-import { TextButton } from "../../components/global/buttons/Buttons";
-import { FormContainer, FormInputWrapper } from "./MissionForm.style";
-import TextArea from "../../components/global/forms/textArea/TextArea";
 import GetSetReadyGo from "../../components/missions/getSetReadyGo/GetSetReadyGo.js";
-import Steppers from "../../components/missions/steps/Steppers";
+import GetSet from "../../components/missions/getSet/GetSet";
+import Heading from "../../components/global/heading/Heading";
 
 const MissionForm = () => {
   // state goes here
-  const [activeStep, setActiveStep] = React.useState(0);
+  // const [activeStep, setActiveStep] = React.useState(0);
+  const [currentMissionObject, setCurrentMissionObject] = React.useState({});
+  const [missionState, setMissionState] = React.useState("get");
 
+  const missionNumber = window.location.pathname.replace("/mission/", "");
+
+  React.useEffect(() => {
+    const func = async () => {
+      const post = await fetch(
+        `../../../.netlify/functions/fetch-mission/fetch-mission.js?missionNumber=${missionNumber}`,
+      );
+
+      await post.json().then((data) => {
+        setCurrentMissionObject(data);
+        console.log(data);
+      });
+    };
+
+    func();
+  }, [missionNumber]);
+
+  // function for the stepper for Go Page
+  // const handleNext = () => {
+  //   setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  // };
+
+  /* This function should be moved into Go Page
   const token = JSON.parse(localStorage.getItem("token"));
 
   const email = token ? token.email : "";
@@ -20,16 +43,6 @@ const MissionForm = () => {
     Task2b: "",
     Task2c: "",
   });
-
-  // function for the stepper
-  const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-  };
-
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setForm({ ...form, [name]: value });
-  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -46,44 +59,30 @@ const MissionForm = () => {
     );
 
     await response.json();
-  };
+  }; */
 
-  let missionState = "get";
+  const isLoading = Object.keys(currentMissionObject).length === 0;
 
-  return (
-    <>
-      <GetSetReadyGo missionState={missionState} />
-      <Steppers
-        activeStep={activeStep}
-        setActiveStep={setActiveStep}
-        handleNext={handleNext}
-      />
-      <FormContainer onSubmit={handleSubmit}>
-        <FormInputWrapper>
-          <TextArea
-            name={"Task2a"}
-            label={"My Actions"}
-            onChange={handleChange}
+  if (isLoading) {
+    return <Heading>Loading Mission...</Heading>;
+  } else {
+    return (
+      <>
+        <GetSetReadyGo missionState={missionState} />
+        {missionState === "get" && (
+          <GetSet
+            missionNumber={missionNumber}
+            missionName={currentMissionObject["Mission Name"]}
+            superpower={currentMissionObject.Superpower}
+            superpowerIcon={currentMissionObject["Superpower Icon"]}
+            getSet={currentMissionObject["Get Set"]}
+            video={currentMissionObject.Video}
+            setMissionState={setMissionState}
           />
-        </FormInputWrapper>
-        <FormInputWrapper>
-          <TextArea
-            name={"Task2b"}
-            label={"My Results"}
-            onChange={handleChange}
-          />
-        </FormInputWrapper>
-        <FormInputWrapper>
-          <TextArea
-            name={"Task2c"}
-            label={"My Learning"}
-            onChange={handleChange}
-          />
-        </FormInputWrapper>
-        <TextButton type={"submit"} text={"Get started!"} />
-      </FormContainer>
-    </>
-  );
+        )}
+      </>
+    );
+  }
 };
 
 export default MissionForm;

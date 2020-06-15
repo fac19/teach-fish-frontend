@@ -5,7 +5,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import Navbar from "./components/global/navbar/Navbar";
+// import Navbar from "./components/global/navbar/Navbar";
 import Landing from "./pages/landingPage/Landing";
 import About from "./pages/aboutPage/About";
 import Login from "./pages/loginPage/Login";

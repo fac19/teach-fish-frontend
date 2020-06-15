@@ -67,13 +67,13 @@ const SignUp = () => {
     };
 
     func();
-  }, [loginInfo]);
+  }, [loginInfo, setIsUserInfoComplete]);
 
   React.useEffect(() => {
     if (isUserInfoComplete) {
       return history.push("/my-missions");
     }
-  }, [isUserInfoComplete]);
+  }, [isUserInfoComplete, history]);
 
   React.useEffect(() => {
     const token = JSON.parse(localStorage.getItem("token"));

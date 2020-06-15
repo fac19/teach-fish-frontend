@@ -32,7 +32,7 @@ const StyledText = styled.p`
   font-size: 1.5rem;
 
   @media (min-width: 600px) {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 `;
 

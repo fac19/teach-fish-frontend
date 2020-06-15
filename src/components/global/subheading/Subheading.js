@@ -6,9 +6,10 @@ const Subheading = styled.h2`
   font-size: 1.5rem;
   color: ${fontColour};
   text-align: center;
+  text-transform: uppercase;
 
   @media (min-width: 600px) {
-    font-size: 3rem;
+    font-size: 2.2rem;
   }
 `;
 
