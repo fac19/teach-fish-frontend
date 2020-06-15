@@ -4,6 +4,7 @@ import { TextButton } from "../../components/global/buttons/Buttons";
 import { FormContainer, FormInputWrapper } from "./MissionForm.style";
 import TextArea from "../../components/global/forms/textArea/TextArea";
 import Steppers from "../../components/missions/steps/Steppers";
+import GetSet from "../../components/missions/getSet/GetSet";
 
 const MissionForm = () => {
   // state goes here
@@ -49,13 +50,14 @@ const MissionForm = () => {
 
   return (
     <>
-      <Heading>Mission page</Heading>
-      <Steppers
+      {/* <Heading>Mission page</Heading> */}
+      {/* <Steppers
         activeStep={activeStep}
         setActiveStep={setActiveStep}
         handleNext={handleNext}
-      />
-      <FormContainer onSubmit={handleSubmit}>
+      /> */}
+      <GetSet />
+      {/* <FormContainer onSubmit={handleSubmit}>
         <FormInputWrapper>
           <TextArea
             name={"Task2a"}
@@ -78,7 +80,7 @@ const MissionForm = () => {
           />
         </FormInputWrapper>
         <TextButton type={"submit"} text={"Get started!"} />
-      </FormContainer>
+      </FormContainer> */}
     </>
   );
 };
