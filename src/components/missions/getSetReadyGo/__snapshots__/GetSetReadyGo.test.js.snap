@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GetSetReadyGo component is styled 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  font-family: "Josefin Sans",sans-serif;
+  text-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-top: 0;
+}
+
+.c1 {
+  font-size: 1.5rem;
+}
+
+@media (min-width:600px) {
+  .c1 {
+    font-size: 2.5rem;
+  }
+}
+
+<div
+  className="c0"
+>
+  <p
+    className="c1 makeStyles-active-3"
+  >
+    Get Set
+  </p>
+  <svg
+    aria-hidden={true}
+    className="MuiSvgIcon-root makeStyles-inactive-2"
+    focusable="false"
+    viewBox="0 0 24 24"
+  >
+    <path
+      d="M5.88 4.12L13.76 12l-7.88 7.88L8 22l10-10L8 2z"
+    />
+  </svg>
+  <p
+    className="c1 makeStyles-inactive-2"
+  >
+    Ready
+  </p>
+  <svg
+    aria-hidden={true}
+    className="MuiSvgIcon-root makeStyles-inactive-2"
+    focusable="false"
+    viewBox="0 0 24 24"
+  >
+    <path
+      d="M5.88 4.12L13.76 12l-7.88 7.88L8 22l10-10L8 2z"
+    />
+  </svg>
+  <p
+    className="c1 makeStyles-inactive-2"
+  >
+    Go
+  </p>
+</div>
+`;
