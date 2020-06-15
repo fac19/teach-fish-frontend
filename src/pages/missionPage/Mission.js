@@ -1,8 +1,8 @@
 import React from "react";
-import Heading from "../../components/global/heading/Heading";
 import { TextButton } from "../../components/global/buttons/Buttons";
 import { FormContainer, FormInputWrapper } from "./MissionForm.style";
 import TextArea from "../../components/global/forms/textArea/TextArea";
+import GetSetReadyGo from "../../components/missions/getSetReadyGo/GetSetReadyGo.js";
 
 const MissionForm = () => {
   const token = JSON.parse(localStorage.getItem("token"));
@@ -38,9 +38,11 @@ const MissionForm = () => {
     await response.json();
   };
 
+  let missionState = "get";
+
   return (
     <>
-      <Heading>Mission page</Heading>
+      <GetSetReadyGo missionState={missionState} />
       <FormContainer onSubmit={handleSubmit}>
         <FormInputWrapper>
           <TextArea
