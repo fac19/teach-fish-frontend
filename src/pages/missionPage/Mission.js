@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import Heading from "../../components/global/heading/Heading";
+import React from "react";
 import { TextButton } from "../../components/global/buttons/Buttons";
 import { FormContainer, FormInputWrapper } from "./MissionForm.style";
 import TextArea from "../../components/global/forms/textArea/TextArea";
+import GetSetReadyGo from "../../components/missions/getSetReadyGo/GetSetReadyGo.js";
 import Steppers from "../../components/missions/steps/Steppers";
 
 const MissionForm = () => {
@@ -47,9 +47,11 @@ const MissionForm = () => {
     await response.json();
   };
 
+  let missionState = "get";
+
   return (
     <>
-      <Heading>Mission page</Heading>
+      <GetSetReadyGo missionState={missionState} />
       <Steppers
         activeStep={activeStep}
         setActiveStep={setActiveStep}

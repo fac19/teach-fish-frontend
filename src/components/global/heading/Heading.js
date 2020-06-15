@@ -9,7 +9,7 @@ const Heading = styled.h1`
 
   @media (min-width: 600px) {
     font-size: 4rem;
-  
+  }
 `;
 
 export default Heading;
