@@ -3,12 +3,14 @@ import GetSetReadyGo from "../../components/missions/getSetReadyGo/GetSetReadyGo
 import GetSet from "../../components/missions/getSet/GetSet";
 import Ready from "../../components/missions/ready/Ready";
 import Go from "../../components/missions/go/Go";
+import QuizComplete from "../../components/missions/quizComplete/QuizComplete";
 import Heading from "../../components/global/heading/Heading";
 
 const MissionPage = () => {
   // state goes here
   const [currentMissionObject, setCurrentMissionObject] = React.useState({});
   const [missionState, setMissionState] = React.useState("get");
+  const [quizAnswersCorrect, setQuizAnswersCorrect] = React.useState("false");
 
   const missionNumber = window.location.pathname.replace("/mission/", "");
 
@@ -33,7 +35,9 @@ const MissionPage = () => {
   } else {
     return (
       <>
-        <GetSetReadyGo missionState={missionState} />
+        {missionState !== "quizComplete" && (
+          <GetSetReadyGo missionState={missionState} />
+        )}
         {missionState === "get" && (
           <GetSet
             missionNumber={missionNumber}
@@ -46,7 +50,22 @@ const MissionPage = () => {
           />
         )}
         {missionState === "ready" && (
-          <Ready setMissionState={setMissionState} />
+          <Ready
+            question1={currentMissionObject["Question 1"]}
+            question2={currentMissionObject["Question 2"]}
+            Question1AnswerChoice={currentMissionObject["Answer 1"]}
+            Question1CorrectAnswer={currentMissionObject["Correct Answer 1"]}
+            Question2AnswerChoice={currentMissionObject["Answer 2"]}
+            Question2CorrectAnswer={currentMissionObject["Correct Answer 2"]}
+            setQuizAnswersCorrect={setQuizAnswersCorrect}
+            setMissionState={setMissionState}
+          />
+        )}
+        {missionState === "quizComplete" && (
+          <QuizComplete
+            setMissionState={setMissionState}
+            quizAnswersCorrect={quizAnswersCorrect}
+          />
         )}
         {missionState === "go" && (
           <Go

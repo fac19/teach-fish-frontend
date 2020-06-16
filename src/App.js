@@ -34,6 +34,7 @@ const App = () => {
       setUserInfo({ user: null }, logoutUser()),
     );
   }, []);
+
   return (
     <AppContextProvider>
       <AppContainer>

@@ -22,6 +22,7 @@ exports[`TextArea component is styled 1`] = `
   <textarea
     className="c1"
     placeholder="Please type your answer here..."
+    required={true}
   />
 </label>
 `;
