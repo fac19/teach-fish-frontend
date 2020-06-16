@@ -8,7 +8,6 @@ import {
 // import Navbar from "./components/global/navbar/Navbar";
 import Landing from "./pages/landingPage/Landing";
 import About from "./pages/aboutPage/About";
-import Login from "./pages/loginPage/Login";
 import SignUp from "./pages/signUpPage/SignUp";
 import MyMissions from "./pages/myMissionsPage/MyMissions";
 import MyProfile from "./pages/myProfilePage/MyProfile";
@@ -43,7 +42,6 @@ const App = () => {
             <Route exact path="/" component={() => <Landing />} />
             <Route path="/about" component={() => <About />} />
             <Route path="/signup" component={() => <SignUp />} />
-            <Route path="/login" component={() => <Login />} />
             <Route path="/logout" />
             <Route path="/my-profile" component={auth(MyProfile, userInfo)} />
             <Route

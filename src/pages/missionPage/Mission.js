@@ -9,7 +9,7 @@ import Heading from "../../components/global/heading/Heading";
 const MissionPage = () => {
   // state goes here
   const [currentMissionObject, setCurrentMissionObject] = React.useState({});
-  const [missionState, setMissionState] = React.useState("get");
+  const [missionState, setMissionState] = React.useState("go");
   const [quizAnswersCorrect, setQuizAnswersCorrect] = React.useState("false");
 
   const missionNumber = window.location.pathname.replace("/mission/", "");
