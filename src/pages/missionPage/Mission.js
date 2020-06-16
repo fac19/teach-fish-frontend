@@ -1,6 +1,8 @@
 import React from "react";
 import GetSetReadyGo from "../../components/missions/getSetReadyGo/GetSetReadyGo.js";
 import GetSet from "../../components/missions/getSet/GetSet";
+import Ready from "../../components/missions/getSet/Ready";
+import Go from "../../components/missions/getSet/Go";
 import Heading from "../../components/global/heading/Heading";
 
 const MissionForm = () => {
@@ -80,6 +82,8 @@ const MissionForm = () => {
             setMissionState={setMissionState}
           />
         )}
+        {missionState === "ready" && <Ready />}
+        {missionState === "go" && <Go />}
       </>
     );
   }
