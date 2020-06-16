@@ -3,13 +3,14 @@ import GetSetReadyGo from "../../components/missions/getSetReadyGo/GetSetReadyGo
 import GetSet from "../../components/missions/getSet/GetSet";
 import Ready from "../../components/missions/ready/Ready";
 import Go from "../../components/missions/go/Go";
+import QuizComplete from "../../components/missions/quizComplete/QuizComplete";
 import Heading from "../../components/global/heading/Heading";
 
-const MissionForm = () => {
+const MissionPage = () => {
   // state goes here
-  // const [activeStep, setActiveStep] = React.useState(0);
   const [currentMissionObject, setCurrentMissionObject] = React.useState({});
   const [missionState, setMissionState] = React.useState("get");
+  const [quizAnswersCorrect, setQuizAnswersCorrect] = React.useState("false");
 
   const missionNumber = window.location.pathname.replace("/mission/", "");
 
@@ -21,47 +22,11 @@ const MissionForm = () => {
 
       await post.json().then((data) => {
         setCurrentMissionObject(data);
-        console.log(data);
       });
     };
 
     func();
   }, [missionNumber]);
-
-  // function for the stepper for Go Page
-  // const handleNext = () => {
-  //   setActiveStep((prevActiveStep) => prevActiveStep + 1);
-  // };
-
-  /* This function should be moved into Go Page
-  const token = JSON.parse(localStorage.getItem("token"));
-
-  const email = token ? token.email : "";
-
-  const [form, setForm] = React.useState({
-    Email: email,
-    Task1: "",
-    Task2a: "",
-    Task2b: "",
-    Task2c: "",
-  });
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-    const response = await fetch(
-      "../../../.netlify/functions/post-entries/post-entries.js",
-      {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(form),
-      },
-    );
-
-    await response.json();
-  }; */
 
   const isLoading = Object.keys(currentMissionObject).length === 0;
 
@@ -70,7 +35,9 @@ const MissionForm = () => {
   } else {
     return (
       <>
-        <GetSetReadyGo missionState={missionState} />
+        {missionState !== "quizComplete" && (
+          <GetSetReadyGo missionState={missionState} />
+        )}
         {missionState === "get" && (
           <GetSet
             missionNumber={missionNumber}
@@ -82,11 +49,38 @@ const MissionForm = () => {
             setMissionState={setMissionState}
           />
         )}
-        {missionState === "ready" && <Ready />}
-        {missionState === "go" && <Go />}
+        {missionState === "ready" && (
+          <Ready
+            missionNumber={missionNumber}
+            question1={currentMissionObject["Question 1"]}
+            question2={currentMissionObject["Question 2"]}
+            Question1AnswerChoice={currentMissionObject["Answer 1"]}
+            Question1CorrectAnswer={currentMissionObject["Correct Answer 1"]}
+            Question2AnswerChoice={currentMissionObject["Answer 2"]}
+            Question2CorrectAnswer={currentMissionObject["Correct Answer 2"]}
+            setQuizAnswersCorrect={setQuizAnswersCorrect}
+            setMissionState={setMissionState}
+          />
+        )}
+        {missionState === "quizComplete" && (
+          <QuizComplete
+            setMissionState={setMissionState}
+            quizAnswersCorrect={quizAnswersCorrect}
+          />
+        )}
+        {missionState === "go" && (
+          <Go
+            task1={currentMissionObject["Task 1 Instructions"]}
+            task2={currentMissionObject["Task 2 Instructions"]}
+            task2a={currentMissionObject["Task 2a Question"]}
+            task2b={currentMissionObject["Task 2b Question"]}
+            task2c={currentMissionObject["Task 2c Question"]}
+            setMissionState={setMissionState}
+          />
+        )}
       </>
     );
   }
 };
 
-export default MissionForm;
+export default MissionPage;

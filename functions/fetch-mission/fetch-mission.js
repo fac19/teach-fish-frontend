@@ -11,7 +11,7 @@ exports.handler = async (event, context) => {
   }).base(AIRTABLE_BASE_ID);
 
   let data = [];
-  console.log("fetch mission reached");
+  // console.log("fetch mission reached");
   await base("Mission")
     .select({
       maxRecords: 100,

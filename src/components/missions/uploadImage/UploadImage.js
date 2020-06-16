@@ -1,12 +1,9 @@
-const uploadImage = (e) => {
-  const fieldName = e.currentTarget.id;
-  console.log(fieldName);
-
+const uploadImage = () => {
   window.cloudinary.openUploadWidget(
     {
       cloudName: "teach-a-man-to-fish",
       uploadPreset: "TAMTF2020",
-      sources: ["local", "image_search", "url", "google_drive", "facebook"],
+      sources: ["local", "google_drive", "facebook"],
       cropping: true,
       multiple: false,
       defaultSource: "local",
@@ -31,9 +28,8 @@ const uploadImage = (e) => {
 
     (error, result) => {
       if (!error && result && result.event === "success") {
-        // console.log(result.info);
         const url = result.info.url;
-        console.log(url);
+        return url;
         //pushes through to upload answers (props.url = url)
       }
     },
