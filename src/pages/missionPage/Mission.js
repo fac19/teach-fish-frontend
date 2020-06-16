@@ -82,7 +82,14 @@ const MissionForm = () => {
             setMissionState={setMissionState}
           />
         )}
-        {missionState === "ready" && <Ready />}
+        {missionState === "ready" && (
+          <Ready
+            question1={currentMissionObject["Question 1"]}
+            question2={currentMissionObject["Question 2"]}
+            answer1={currentMissionObject["Answer 1"]}
+            answer2={currentMissionObject["Answer 2"]}
+          />
+        )}
         {missionState === "go" && <Go />}
       </>
     );
