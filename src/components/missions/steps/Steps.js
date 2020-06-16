@@ -55,7 +55,7 @@ const useQontoStepIconStyles = makeStyles({
   },
 });
 
-function QontoStepIcon(props) {
+const QontoStepIcon = (props) => {
   const classes = useQontoStepIconStyles();
   const { active, completed } = props;
 
@@ -71,7 +71,7 @@ function QontoStepIcon(props) {
       )}
     </div>
   );
-}
+};
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -90,11 +90,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function getSteps() {
+const getSteps = () => {
   return ["Task 1", "Task 2", "Submit"];
-}
+};
 
-export default function Steppers(props) {
+const Steps = (props) => {
   const classes = useStyles();
   const steps = getSteps();
 
@@ -144,4 +144,6 @@ export default function Steppers(props) {
       </div>
     </div>
   );
-}
+};
+
+export default Steps;
