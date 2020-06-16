@@ -7,11 +7,40 @@ import RadioButtons from "../../../components/global/forms/radioButtons/RadioBut
 
 const Ready = (props) => {
   const [currentQuestion, setCurrentQuestion] = React.useState("1");
-  const givenAnswers = [];
+  const [selectedAnswer, setSelectedAnswer] = React.useState("");
+  const [givenAnswers, setGivenAnswers] = React.useState([]);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(event);
+  React.useEffect(() => {
+    if (currentQuestion === "2" && givenAnswers.length === 2) {
+      let correctAnswer1 = props.Question1CorrectAnswer;
+      let correctAnswer2 = props.Question2CorrectAnswer;
+      if (
+        givenAnswers[0] === correctAnswer1 &&
+        givenAnswers[1] === correctAnswer2
+      ) {
+        props.setQuizAnswersCorrect(true);
+        console.log("Right");
+      } else {
+        props.setQuizAnswersCorrect(false);
+        console.log("Wrong :(");
+      }
+      props.setMissionState("quizComplete");
+    }
+  }, [givenAnswers]);
+
+  const handleChange = (event) => {
+    setSelectedAnswer(event.target.value);
+  };
+
+  const handleSubmit = () => {
+    let copyOfGivenAnswers = [...givenAnswers];
+    copyOfGivenAnswers.push(selectedAnswer);
+
+    setGivenAnswers(copyOfGivenAnswers);
+
+    if (currentQuestion === "1") {
+      setCurrentQuestion("2");
+    }
   };
 
   return (
@@ -21,23 +50,23 @@ const Ready = (props) => {
       </Subheading>
       <Paragraph>Let's see what you have learnt so far</Paragraph>
       <SectionTitle>Question {currentQuestion}</SectionTitle>
-      <form onSubmit={handleSubmit}>
-        {currentQuestion === "1" && (
-          <RadioButtons
-            question={props.question1}
-            option1answer={props.Question1Answer1[0]}
-            option2answer={props.Question1Answer1[1]}
-          />
-        )}
-        {currentQuestion === "2" && (
-          <RadioButtons
-            question={props.question2}
-            option1answer={props.Question2Answer1[0]}
-            option2answer={props.Question2Answer1[1]}
-          />
-        )}
-        <TextButton type={"submit"} text={"Next"} />
-      </form>
+      {currentQuestion === "1" && (
+        <RadioButtons
+          onChange={handleChange}
+          question={props.question1}
+          option1answer={props.Question1AnswerChoice[0]}
+          option2answer={props.Question1AnswerChoice[1]}
+        />
+      )}
+      {currentQuestion === "2" && (
+        <RadioButtons
+          onChange={handleChange}
+          question={props.question2}
+          option1answer={props.Question2AnswerChoice[0]}
+          option2answer={props.Question2AnswerChoice[1]}
+        />
+      )}
+      <TextButton onClick={handleSubmit} text={"Next"} />
     </>
   );
   // take questions from object
