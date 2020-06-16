@@ -54,7 +54,13 @@ const Go = (props) => {
       <FormContainer onSubmit={handleSubmit}>
         <Subheading>Task 1</Subheading>
         <Paragraph>{props.task1}</Paragraph>
-        <TextButton text="Upload Photo" onClick={(e) => UploadImage(e)} />
+        <input
+          type="button"
+          value="Upload your image"
+          name={"Task1"}
+          onClick={() => UploadImage()}
+          onChange={handleChange}
+        />
         <Subheading>Task 2</Subheading>
         <Paragraph>{props.task2}</Paragraph>
         <FormInputWrapper>
