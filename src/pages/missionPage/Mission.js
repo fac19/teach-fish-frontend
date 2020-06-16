@@ -4,7 +4,6 @@ import GetSet from "../../components/missions/getSet/GetSet";
 import Ready from "../../components/missions/ready/Ready";
 import Go from "../../components/missions/go/Go";
 import QuizComplete from "../../components/missions/quizComplete/QuizComplete";
-import Review from "../../components/missions/review/Review";
 import Heading from "../../components/global/heading/Heading";
 
 const MissionPage = () => {
@@ -82,7 +81,6 @@ const MissionPage = () => {
             setMissionState={setMissionState}
           />
         )}
-        {missionState === "review" && <Review />}
       </>
     );
   }

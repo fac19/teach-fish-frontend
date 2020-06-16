@@ -115,33 +115,6 @@ const Steps = (props) => {
           </Step>
         ))}
       </Stepper>
-
-      <div>
-        {props.activeStep === steps.length ? (
-          <div>
-            <Typography className={classes.instructions}>
-              All steps completed - you&apos;re finished
-            </Typography>
-            <Button onClick={handleReset} className={classes.button}>
-              Reset
-            </Button>
-          </div>
-        ) : (
-          <div>
-            <div>
-              {/* Remove this button when mission pages are completed */}
-              {/* <Button
-                variant="contained"
-                color="primary"
-                onClick={props.handleNext}
-                className={classes.button}>
-                {props.activeStep === steps.length - 1 ? "Finish" : "Next"}
-              </Button> */}
-              {/* remove the above */}
-            </div>
-          </div>
-        )}
-      </div>
     </div>
   );
 };

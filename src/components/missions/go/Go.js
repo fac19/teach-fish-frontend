@@ -28,7 +28,7 @@ const Go = (props) => {
     const { name, value } = event.target;
     setForm({ ...form, [name]: value });
     if (activeStep === 1) {
-      if (form.Task2a !== "" || form.Task2b !== "" || form.Task2c !== "") {
+      if (form.Task2a !== "" && form.Task2b !== "" && form.Task2c !== "") {
         setButtonState(false);
       }
     }
@@ -60,17 +60,6 @@ const Go = (props) => {
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    if (activeStep === 1) {
-      if (form.Task2a === "" || form.Task2b === "" || form.Task2c === "") {
-        console.log("nah");
-        // buttonState = "disabled"
-        // buttonState=true;
-      } else {
-        console.log("yeh");
-        // buttonState =  "enabled";
-        // buttonState=false;
-      }
-    }
   };
 
   return (
@@ -122,7 +111,17 @@ const Go = (props) => {
             />
           </>
         )}
-        {activeStep === 2 && <TextButton type={"submit"} text={"Submit"} />}
+        {activeStep === 2 && (
+          <>
+            <Subheading>Task 1</Subheading>
+            <Paragraph>Your image {form.Task1}</Paragraph>
+            <Subheading>Task 2</Subheading>
+            <Paragraph>1. {form.Task2a}</Paragraph>
+            <Paragraph>2. {form.Task2b}</Paragraph>
+            <Paragraph>3. {form.Task2c}</Paragraph>
+            <TextButton type={"submit"} text={"Submit"} />
+          </>
+        )}
       </FormContainer>
     </>
   );
