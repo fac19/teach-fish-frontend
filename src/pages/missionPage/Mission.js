@@ -14,8 +14,7 @@ const MissionPage = () => {
 
   const missionNumber = window.location.pathname.replace("/mission/", "");
 
-  //DEVELOPMENT OF GO
-  const [missionState, setMissionState] = React.useState("go");
+  const [missionState, setMissionState] = React.useState("get");
 
   React.useEffect(() => {
     const func = async () => {

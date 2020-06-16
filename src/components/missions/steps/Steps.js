@@ -6,8 +6,6 @@ import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
 import Check from "@material-ui/icons/Check";
 import StepConnector from "@material-ui/core/StepConnector";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
 
 const QontoConnector = withStyles({
   alternativeLabel: {
@@ -97,10 +95,6 @@ const getSteps = () => {
 const Steps = (props) => {
   const classes = useStyles();
   const steps = getSteps();
-
-  const handleReset = () => {
-    props.setActiveStep(0);
-  };
 
   return (
     <div className={classes.root}>
