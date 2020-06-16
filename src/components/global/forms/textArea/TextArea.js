@@ -8,7 +8,9 @@ const TextArea = (props) => {
       <TextAreaBox
         name={props.name}
         placeholder="Please type your answer here..."
-        onChange={props.onChange}></TextAreaBox>
+        onChange={props.onChange}
+        required
+      />
     </TextAreaLabel>
   );
 };

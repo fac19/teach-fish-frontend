@@ -28,9 +28,7 @@ const uploadImage = () => {
 
     (error, result) => {
       if (!error && result && result.event === "success") {
-        console.log("result", result);
         const url = result.info.url;
-        console.log("url", url);
         return url;
         //pushes through to upload answers (props.url = url)
       }

@@ -9,13 +9,14 @@ import Subheading from "../../../components/global/subheading/Subheading";
 
 const Go = (props) => {
   const [activeStep, setActiveStep] = React.useState(0);
+  // const [file, setUploadedFile] = React.useState("");
 
   const token = JSON.parse(localStorage.getItem("token"));
   const email = token ? token.email : "";
 
   const [form, setForm] = React.useState({
     Email: email,
-    Task1: "",
+    Task1: "", // change to file from state
     Task2a: "",
     Task2b: "",
     Task2c: "",
@@ -24,6 +25,11 @@ const Go = (props) => {
   const handleChange = (event) => {
     const { name, value } = event.target;
     setForm({ ...form, [name]: value });
+  };
+
+  const handleUpload = (event) => {
+    UploadImage();
+    // setUploadedFile state with cloudinary url
   };
 
   const handleSubmit = async (event) => {
@@ -52,39 +58,48 @@ const Go = (props) => {
     <>
       <Steps activeStep={activeStep} handleNext={handleNext} />
       <FormContainer onSubmit={handleSubmit}>
-        <Subheading>Task 1</Subheading>
-        <Paragraph>{props.task1}</Paragraph>
-        <input
-          type="button"
-          value="Upload your image"
-          name={"Task1"}
-          onClick={() => UploadImage()}
-          onChange={handleChange}
-        />
-        <Subheading>Task 2</Subheading>
-        <Paragraph>{props.task2}</Paragraph>
-        <FormInputWrapper>
-          <TextArea
-            name={"Task2a"}
-            label={props.task2a}
-            onChange={handleChange}
-          />
-        </FormInputWrapper>
-        <FormInputWrapper>
-          <TextArea
-            name={"Task2b"}
-            label={props.task2b}
-            onChange={handleChange}
-          />
-        </FormInputWrapper>
-        <FormInputWrapper>
-          <TextArea
-            name={"Task2c"}
-            label={props.task2c}
-            onChange={handleChange}
-          />
-        </FormInputWrapper>
-        <TextButton type={"submit"} text={"Submit"} />
+        {activeStep === 0 && (
+          <>
+            <Subheading>Task 1</Subheading>
+            <Paragraph>{props.task1}</Paragraph>
+            <input
+              type="button"
+              value="Upload your image"
+              name={"Task1"}
+              onClick={handleUpload}
+            />
+            <TextButton text={"Go To Next Task"} onClick={handleNext} />
+          </>
+        )}
+        {activeStep === 1 && (
+          <>
+            <Subheading>Task 2</Subheading>
+            <Paragraph>{props.task2}</Paragraph>
+            <FormInputWrapper>
+              <TextArea
+                name={"Task2a"}
+                label={props.task2a}
+                onChange={handleChange}
+              />
+            </FormInputWrapper>
+            <FormInputWrapper>
+              <TextArea
+                name={"Task2b"}
+                label={props.task2b}
+                onChange={handleChange}
+              />
+            </FormInputWrapper>
+            <FormInputWrapper>
+              <TextArea
+                name={"Task2c"}
+                label={props.task2c}
+                onChange={handleChange}
+              />
+            </FormInputWrapper>
+            <TextButton text={"Go to mission review"} onClick={handleNext} />
+          </>
+        )}
+        {activeStep === 2 && <TextButton type={"submit"} text={"Submit"} />}
       </FormContainer>
     </>
   );

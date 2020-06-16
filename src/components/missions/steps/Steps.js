@@ -130,13 +130,13 @@ const Steps = (props) => {
           <div>
             <div>
               {/* Remove this button when mission pages are completed */}
-              <Button
+              {/* <Button
                 variant="contained"
                 color="primary"
                 onClick={props.handleNext}
                 className={classes.button}>
                 {props.activeStep === steps.length - 1 ? "Finish" : "Next"}
-              </Button>
+              </Button> */}
               {/* remove the above */}
             </div>
           </div>

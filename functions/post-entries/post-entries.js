@@ -19,7 +19,7 @@ exports.handler = async (event, context) => {
     .create([
       {
         fields: {
-          "Mission Number": ["recbkdrTEXq4jdEBg"], // Change later by getting number from URL or state
+          "Mission Number": 1, // Change later by getting number from URL or state
           Email: form.Email,
           "Task 1 URL": form.Task1,
           "Task 2a": form.Task2a,
