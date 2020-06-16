@@ -22,9 +22,16 @@ const Go = (props) => {
     Task2c: "",
   });
 
+  const [buttonState, setButtonState] = React.useState(true);
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     setForm({ ...form, [name]: value });
+    if (activeStep === 1) {
+      if (form.Task2a !== "" || form.Task2b !== "" || form.Task2c !== "") {
+        setButtonState(false);
+      }
+    }
   };
 
   const handleUpload = (event) => {
@@ -50,8 +57,20 @@ const Go = (props) => {
   };
 
   // function for the stepper for Go Page
+
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    if (activeStep === 1) {
+      if (form.Task2a === "" || form.Task2b === "" || form.Task2c === "") {
+        console.log("nah");
+        // buttonState = "disabled"
+        // buttonState=true;
+      } else {
+        console.log("yeh");
+        // buttonState =  "enabled";
+        // buttonState=false;
+      }
+    }
   };
 
   return (
@@ -96,7 +115,11 @@ const Go = (props) => {
                 onChange={handleChange}
               />
             </FormInputWrapper>
-            <TextButton text={"Go to mission review"} onClick={handleNext} />
+            <TextButton
+              disabled={buttonState}
+              text={"Go to mission review"}
+              onClick={handleNext}
+            />
           </>
         )}
         {activeStep === 2 && <TextButton type={"submit"} text={"Submit"} />}

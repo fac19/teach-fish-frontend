@@ -4,15 +4,19 @@ import GetSet from "../../components/missions/getSet/GetSet";
 import Ready from "../../components/missions/ready/Ready";
 import Go from "../../components/missions/go/Go";
 import QuizComplete from "../../components/missions/quizComplete/QuizComplete";
+import Review from "../../components/missions/review/Review";
 import Heading from "../../components/global/heading/Heading";
 
 const MissionPage = () => {
   // state goes here
   const [currentMissionObject, setCurrentMissionObject] = React.useState({});
-  const [missionState, setMissionState] = React.useState("get");
+  // const [missionState, setMissionState] = React.useState("get");
   const [quizAnswersCorrect, setQuizAnswersCorrect] = React.useState("false");
 
   const missionNumber = window.location.pathname.replace("/mission/", "");
+
+  //DEVELOPMENT OF GO
+  const [missionState, setMissionState] = React.useState("go");
 
   React.useEffect(() => {
     const func = async () => {
@@ -78,6 +82,7 @@ const MissionPage = () => {
             setMissionState={setMissionState}
           />
         )}
+        {missionState === "review" && <Review />}
       </>
     );
   }
