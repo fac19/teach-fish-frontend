@@ -69,10 +69,16 @@ const Go = (props) => {
       },
     );
   };
+  const [buttonState, setButtonState] = React.useState(true);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
     setForm({ ...form, [name]: value });
+    if (activeStep === 1) {
+      if (form.Task2a !== "" && form.Task2b !== "" && form.Task2c !== "") {
+        setButtonState(false);
+      }
+    }
   };
 
   const handleSubmit = async (event) => {
@@ -93,6 +99,7 @@ const Go = (props) => {
   };
 
   // function for the stepper for Go Page
+
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
@@ -135,10 +142,24 @@ const Go = (props) => {
                 onChange={handleChange}
               />
             </FormInputWrapper>
-            <TextButton text={"Go to mission review"} onClick={handleNext} />
+            <TextButton
+              disabled={buttonState}
+              text={"Go to mission review"}
+              onClick={handleNext}
+            />
           </>
         )}
-        {activeStep === 2 && <TextButton type={"submit"} text={"Submit"} />}
+        {activeStep === 2 && (
+          <>
+            <Subheading>Task 1</Subheading>
+            <Paragraph>Your image {form.Task1}</Paragraph>
+            <Subheading>Task 2</Subheading>
+            <Paragraph>1. {form.Task2a}</Paragraph>
+            <Paragraph>2. {form.Task2b}</Paragraph>
+            <Paragraph>3. {form.Task2c}</Paragraph>
+            <TextButton type={"submit"} text={"Submit"} />
+          </>
+        )}
       </FormContainer>
     </>
   );
