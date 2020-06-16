@@ -1,15 +1,15 @@
 import React from "react";
 
-import { makeStyles } from "@material-ui/core/styles";
+// import { makeStyles } from "@material-ui/core/styles";
 import Link from "@material-ui/core/Link";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    "& > * + *": {
-      marginLeft: theme.spacing(2),
-    },
-  },
-}));
+// const useStyles = makeStyles((theme) => ({
+//   root: {
+//     "& > * + *": {
+//       marginLeft: theme.spacing(2),
+//     },
+//   },
+// }));
 
 export default function requireAuthentication(
   Component,
@@ -23,7 +23,7 @@ export default function requireAuthentication(
     // console.log("auth.js - component", Component);
     // console.log("auth.js - user", user);
     // console.log("auth.js - isLoggedIn", isLoggedIn);
-    const classes = useStyles();
+    // const classes = useStyles();
     const preventDefault = (event) => event.preventDefault();
     return user ? (
       <Component user={user} {...props} />

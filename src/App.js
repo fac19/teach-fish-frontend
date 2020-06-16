@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  Redirect,
+  // Redirect,
   BrowserRouter as Router,
   Switch,
   Route,
@@ -23,7 +23,7 @@ import "./App.css";
 import { AppContextProvider } from "./utils/AppContext";
 
 const App = () => {
-  const [userInfo, setUserInfo] = React.useState();
+  const [userInfo, setUserInfo] = React.useState({});
 
   React.useEffect(() => {
     // const user = localStorage.getItem("gotrue.user");
@@ -42,7 +42,7 @@ const App = () => {
     netlifyIdentity.on("logout", (user) =>
       setUserInfo({ user: null }, logoutUser()),
     );
-  }, []);
+  }, [userInfo]);
 
   return (
     <AppContextProvider>
@@ -72,45 +72,45 @@ const App = () => {
   );
 };
 
-const netlifyAuth = {
-  isAuthenticated: false,
-  user: null,
-  authenticate(callback) {
-    this.isAuthenticated = true;
-    netlifyIdentity.open();
-    netlifyIdentity.on("login", (user) => {
-      this.user = user;
-      callback(user);
-    });
-  },
-  signout(callback) {
-    this.isAuthenticated = false;
-    netlifyIdentity.logout();
-    netlifyIdentity.on("logout", () => {
-      this.user = null;
-      callback();
-    });
-  },
-};
+// const netlifyAuth = {
+//   isAuthenticated: false,
+//   user: null,
+//   authenticate(callback) {
+//     this.isAuthenticated = true;
+//     netlifyIdentity.open();
+//     netlifyIdentity.on("login", (user) => {
+//       this.user = user;
+//       callback(user);
+//     });
+//   },
+//   signout(callback) {
+//     this.isAuthenticated = false;
+//     netlifyIdentity.logout();
+//     netlifyIdentity.on("logout", () => {
+//       this.user = null;
+//       callback();
+//     });
+//   },
+// };
 
-function PrivateRoute({ component: Component, ...rest }) {
-  return (
-    <Route
-      {...rest}
-      render={(props) =>
-        netlifyAuth.isAuthenticated ? (
-          <Component {...props} />
-        ) : (
-          <Redirect
-            to={{
-              pathname: "/login",
-              state: { from: props.location },
-            }}
-          />
-        )
-      }
-    />
-  );
-}
+// function PrivateRoute({ component: Component, ...rest }) {
+//   return (
+//     <Route
+//       {...rest}
+//       render={(props) =>
+//         netlifyAuth.isAuthenticated ? (
+//           <Component {...props} />
+//         ) : (
+//           <Redirect
+//             to={{
+//               pathname: "/login",
+//               state: { from: props.location },
+//             }}
+//           />
+//         )
+//       }
+//     />
+//   );
+// }
 
 export default App;

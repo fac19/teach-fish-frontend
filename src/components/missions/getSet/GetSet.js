@@ -12,7 +12,7 @@ import {
 } from "./GetSet.style";
 import { TextButton } from "../../../components/global/buttons/Buttons";
 
-export default function GetSet(props) {
+const GetSet = (props) => {
   return (
     <GetSetContainer>
       <Subheading>
@@ -44,4 +44,6 @@ export default function GetSet(props) {
       />
     </GetSetContainer>
   );
-}
+};
+
+export default GetSet;
