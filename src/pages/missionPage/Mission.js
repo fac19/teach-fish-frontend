@@ -51,6 +51,7 @@ const MissionPage = () => {
         )}
         {missionState === "ready" && (
           <Ready
+            missionNumber={missionNumber}
             question1={currentMissionObject["Question 1"]}
             question2={currentMissionObject["Question 2"]}
             Question1AnswerChoice={currentMissionObject["Answer 1"]}

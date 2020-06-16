@@ -25,7 +25,7 @@ const Ready = (props) => {
       }
       props.setMissionState("quizComplete");
     }
-  }, [givenAnswers]);
+  }, [props, currentQuestion, givenAnswers]);
 
   const handleChange = (event) => {
     setSelectedAnswer(event.target.value);

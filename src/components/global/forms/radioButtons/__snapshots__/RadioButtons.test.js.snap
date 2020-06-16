@@ -11,6 +11,10 @@ exports[`RadioButtons component is styled 1`] = `
   flex-direction: column;
 }
 
+.c0 > * {
+  padding: 1.5rem 0 1.5rem 0;
+}
+
 <fieldset
   className="c0"
 >
@@ -19,12 +23,6 @@ exports[`RadioButtons component is styled 1`] = `
     <input
       name="answer"
       required={true}
-      type="radio"
-    />
-  </label>
-  <label>
-    <input
-      name="answer"
       type="radio"
     />
   </label>
