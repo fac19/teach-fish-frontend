@@ -6,8 +6,6 @@ import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
 import Check from "@material-ui/icons/Check";
 import StepConnector from "@material-ui/core/StepConnector";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
 
 const QontoConnector = withStyles({
   alternativeLabel: {
@@ -98,10 +96,6 @@ const Steps = (props) => {
   const classes = useStyles();
   const steps = getSteps();
 
-  const handleReset = () => {
-    props.setActiveStep(0);
-  };
-
   return (
     <div className={classes.root}>
       <h4 className={classes.subheading}>Mission Progress</h4>
@@ -115,33 +109,6 @@ const Steps = (props) => {
           </Step>
         ))}
       </Stepper>
-
-      <div>
-        {props.activeStep === steps.length ? (
-          <div>
-            <Typography className={classes.instructions}>
-              All steps completed - you&apos;re finished
-            </Typography>
-            <Button onClick={handleReset} className={classes.button}>
-              Reset
-            </Button>
-          </div>
-        ) : (
-          <div>
-            <div>
-              {/* Remove this button when mission pages are completed */}
-              {/* <Button
-                variant="contained"
-                color="primary"
-                onClick={props.handleNext}
-                className={classes.button}>
-                {props.activeStep === steps.length - 1 ? "Finish" : "Next"}
-              </Button> */}
-              {/* remove the above */}
-            </div>
-          </div>
-        )}
-      </div>
     </div>
   );
 };
