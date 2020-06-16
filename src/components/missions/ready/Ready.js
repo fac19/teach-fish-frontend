@@ -4,6 +4,7 @@ import SectionTitle from "../../../components/global/sectionTitle/SectionTitle";
 import Paragraph from "../../../components/global/paragraph/Paragraph";
 import { TextButton } from "../../../components/global/buttons/Buttons";
 import RadioButtons from "../../../components/global/forms/radioButtons/RadioButtons";
+import { ReadyWrapper } from "./Ready.style";
 
 const Ready = (props) => {
   const [currentQuestion, setCurrentQuestion] = React.useState("1");
@@ -19,10 +20,8 @@ const Ready = (props) => {
         givenAnswers[1] === correctAnswer2
       ) {
         props.setQuizAnswersCorrect(true);
-        console.log("Right");
       } else {
         props.setQuizAnswersCorrect(false);
-        console.log("Wrong :(");
       }
       props.setMissionState("quizComplete");
     }
@@ -44,7 +43,7 @@ const Ready = (props) => {
   };
 
   return (
-    <>
+    <ReadyWrapper>
       <Subheading>
         Mission {props.missionNumber}: <br /> {props.missionName}
       </Subheading>
@@ -67,13 +66,8 @@ const Ready = (props) => {
         />
       )}
       <TextButton onClick={handleSubmit} text={"Next"} />
-    </>
+    </ReadyWrapper>
   );
-  // take questions from object
-  // form rendering correct + incorrect answers
-  // check all given answers are correct
-  // if correct move to next page
-  // if incorrect take back to start of mission
 };
 
 export default Ready;

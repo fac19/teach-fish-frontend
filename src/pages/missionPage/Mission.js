@@ -10,9 +10,7 @@ const MissionForm = () => {
   // state goes here
   // const [activeStep, setActiveStep] = React.useState(0);
   const [currentMissionObject, setCurrentMissionObject] = React.useState({});
-  // const [missionState, setMissionState] = React.useState("get");
-  const [missionState, setMissionState] = React.useState("ready");
-
+  const [missionState, setMissionState] = React.useState("get");
   const [quizAnswersCorrect, setQuizAnswersCorrect] = React.useState("false");
 
   const missionNumber = window.location.pathname.replace("/mission/", "");
@@ -25,7 +23,7 @@ const MissionForm = () => {
 
       await post.json().then((data) => {
         setCurrentMissionObject(data);
-        console.log(data);
+        // console.log(data);
       });
     };
 
@@ -101,7 +99,10 @@ const MissionForm = () => {
           />
         )}
         {missionState === "quizComplete" && (
-          <QuizComplete quizAnswersCorrect={quizAnswersCorrect} />
+          <QuizComplete
+            setMissionState={setMissionState}
+            quizAnswersCorrect={quizAnswersCorrect}
+          />
         )}
         {missionState === "go" && <Go />}
       </>
