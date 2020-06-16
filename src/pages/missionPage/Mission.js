@@ -9,7 +9,8 @@ const MissionForm = () => {
   // state goes here
   // const [activeStep, setActiveStep] = React.useState(0);
   const [currentMissionObject, setCurrentMissionObject] = React.useState({});
-  const [missionState, setMissionState] = React.useState("get");
+  // const [missionState, setMissionState] = React.useState("get");
+  const [missionState, setMissionState] = React.useState("ready");
 
   const missionNumber = window.location.pathname.replace("/mission/", "");
 
@@ -86,8 +87,8 @@ const MissionForm = () => {
           <Ready
             question1={currentMissionObject["Question 1"]}
             question2={currentMissionObject["Question 2"]}
-            answer1={currentMissionObject["Answer 1"]}
-            answer2={currentMissionObject["Answer 2"]}
+            Question1Answer1={currentMissionObject["Answer 1"]}
+            Question1Answer2={currentMissionObject["Answer 2"]}
           />
         )}
         {missionState === "go" && <Go />}

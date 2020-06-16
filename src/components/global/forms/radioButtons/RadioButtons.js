@@ -12,16 +12,16 @@ const RadioButtons = (props) => {
           value={props.option1answer}
           required
         />
-        {props.option1label}
+        {props.option1answer}
       </label>
       <label>
         <input type="radio" name="answer" value={props.option2answer} />
-        {props.option2label}
+        {props.option2answer}
       </label>
-      <label>
+      {/* <label>
         <input type="radio" name="answer" value={props.option3answer} />
         {props.option3label}
-      </label>
+      </label> */}
     </RadioButtonFieldset>
   );
 };
