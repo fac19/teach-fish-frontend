@@ -10,11 +10,13 @@ import {
   VideoTitle,
   SuperPowerIcon,
 } from "./GetSet.style";
+import Navbar from "../../../components/global/navbar/Navbar";
 import { TextButton } from "../../../components/global/buttons/Buttons";
 
 const GetSet = (props) => {
   return (
     <GetSetContainer>
+      {/* <Navbar /> */}
       <Subheading>
         Mission {props.missionNumber}: <br /> {props.missionName}
       </Subheading>
