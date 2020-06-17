@@ -1,4 +1,5 @@
 import React from "react";
+import Links from "../../../components/global/links/Links";
 import { TextButton } from "../../global/buttons/Buttons";
 import { FormContainer, FormInputWrapper } from "./Go.style";
 import TextArea from "../../global/forms/textArea/TextArea";
@@ -72,6 +73,7 @@ const Go = (props) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    props.setMissionState("complete");
 
     const response = await fetch(
       "../../../.netlify/functions/post-entries/post-entries.js",
@@ -149,6 +151,9 @@ const Go = (props) => {
           </>
         )}
       </FormContainer>
+      <Links onClick={() => props.setMissionState("get")}>
+        Restart mission
+      </Links>
     </>
   );
 };
