@@ -3,25 +3,61 @@ import { TextButton } from "../../global/buttons/Buttons";
 import { FormContainer, FormInputWrapper } from "./Go.style";
 import TextArea from "../../global/forms/textArea/TextArea";
 import Steps from "../steps/Steps";
-import UploadImage from "../uploadImage/UploadImage";
 import Paragraph from "../../../components/global/paragraph/Paragraph";
 import Subheading from "../../../components/global/subheading/Subheading";
 
 const Go = (props) => {
-  const [activeStep, setActiveStep] = React.useState(0);
-  // const [file, setUploadedFile] = React.useState("");
-
   const token = JSON.parse(localStorage.getItem("token"));
   const email = token ? token.email : "";
 
+  const [activeStep, setActiveStep] = React.useState(0);
+  const [file, setUploadedFile] = React.useState("");
   const [form, setForm] = React.useState({
     Email: email,
-    Task1: "", // change to file from state
+    Task1: file,
     Task2a: "",
     Task2b: "",
     Task2c: "",
   });
 
+  const uploadImage = () => {
+    window.cloudinary.openUploadWidget(
+      {
+        cloudName: "teach-a-man-to-fish",
+        uploadPreset: "TAMTF2020",
+        sources: ["local", "google_drive", "facebook"],
+        cropping: true,
+        multiple: false,
+        defaultSource: "local",
+        styles: {
+          palette: {
+            window: "#F5F5F5",
+            sourceBg: "#FFFFFF",
+            windowBorder: "#90a0b3",
+            tabIcon: "#0094c7",
+            inactiveTabIcon: "#69778A",
+            menuIcons: "#0094C7",
+            link: "#53ad9d",
+            action: "#8F5DA5",
+            inProgress: "#0194c7",
+            complete: "#53ad9d",
+            error: "#c43737",
+            textDark: "#000000",
+            textLight: "#FFFFFF",
+          },
+        },
+      },
+
+      (error, result) => {
+        if (!error && result && result.event === "success") {
+          const url = result.info.url;
+          console.log(result);
+          setForm({ ...form, Task1: url });
+          setUploadedFile(url);
+        }
+      },
+    );
+  };
   const [buttonState, setButtonState] = React.useState(true);
 
   const handleChange = (event) => {
@@ -32,11 +68,6 @@ const Go = (props) => {
         setButtonState(false);
       }
     }
-  };
-
-  const handleUpload = (event) => {
-    UploadImage();
-    // setUploadedFile state with cloudinary url
   };
 
   const handleSubmit = async (event) => {
@@ -70,12 +101,7 @@ const Go = (props) => {
           <>
             <Subheading>Task 1</Subheading>
             <Paragraph>{props.task1}</Paragraph>
-            <input
-              type="button"
-              value="Upload your image"
-              name={"Task1"}
-              onClick={handleUpload}
-            />
+            <TextButton text={"Upload your image"} onClick={uploadImage} />
             <TextButton text={"Go To Next Task"} onClick={handleNext} />
           </>
         )}
@@ -114,7 +140,7 @@ const Go = (props) => {
         {activeStep === 2 && (
           <>
             <Subheading>Task 1</Subheading>
-            <Paragraph>Your image {form.Task1}</Paragraph>
+            <img src={form.Task1} alt="" />
             <Subheading>Task 2</Subheading>
             <Paragraph>1. {form.Task2a}</Paragraph>
             <Paragraph>2. {form.Task2b}</Paragraph>
