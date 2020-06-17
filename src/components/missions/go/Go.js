@@ -31,7 +31,7 @@ const Go = (props) => {
   });
 
   const startOver = () => {
-    setActiveStep(0);
+    props.setMissionState("get");
     setUploadedFile("");
     setForm({
       Email: email,
@@ -188,13 +188,10 @@ const Go = (props) => {
             <br />
             <p>OR</p>
             <br />
-            <Links onClick={startOver}>DISCARD CHANGES AND START AGAIN </Links>
           </SubmitStep>
         )}
       </FormContainer>
-      <Links onClick={() => props.setMissionState("get")}>
-        Restart mission
-      </Links>
+      <Links onClick={startOver}>Restart mission</Links>
     </>
   );
 };
