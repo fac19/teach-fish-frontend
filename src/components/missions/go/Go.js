@@ -1,11 +1,20 @@
 import React from "react";
-import Links from "../../../components/global/links/Links";
-import { TextButton } from "../../global/buttons/Buttons";
-import { FormContainer, FormInputWrapper } from "./Go.style";
+import { TextButton, ImageUploadButton } from "../../global/buttons/Buttons";
+import Links from "../../global/links/Links";
+import {
+  FormContainer,
+  FormInputWrapper,
+  ImageUploadNotification,
+  StyledIcon,
+  UploadedImageDisplay,
+  SubmitStep,
+} from "./Go.style";
 import TextArea from "../../global/forms/textArea/TextArea";
 import Steps from "../steps/Steps";
 import Paragraph from "../../../components/global/paragraph/Paragraph";
 import Subheading from "../../../components/global/subheading/Subheading";
+import tick from "../../../img/tick.svg";
+import crissCross from "../../../img/criss-cross.svg";
 
 const Go = (props) => {
   const token = JSON.parse(localStorage.getItem("token"));
@@ -20,6 +29,18 @@ const Go = (props) => {
     Task2b: "",
     Task2c: "",
   });
+
+  const startOver = () => {
+    setActiveStep(0);
+    setUploadedFile("");
+    setForm({
+      Email: email,
+      Task1: file,
+      Task2a: "",
+      Task2b: "",
+      Task2c: "",
+    });
+  };
 
   const uploadImage = () => {
     window.cloudinary.openUploadWidget(
@@ -103,8 +124,24 @@ const Go = (props) => {
           <>
             <Subheading>Task 1</Subheading>
             <Paragraph>{props.task1}</Paragraph>
-            <TextButton text={"Upload your image"} onClick={uploadImage} />
-            <TextButton text={"Go To Next Task"} onClick={handleNext} />
+
+            <ImageUploadButton
+              text={"Upload your image"}
+              onClick={uploadImage}
+            />
+            <ImageUploadNotification>
+              Image uploaded:{" "}
+              {file ? (
+                <StyledIcon src={tick} />
+              ) : (
+                <StyledIcon src={crissCross} />
+              )}
+            </ImageUploadNotification>
+            <TextButton
+              text={"Go To Next Task"}
+              onClick={handleNext}
+              disabled={!file}
+            />
           </>
         )}
         {activeStep === 1 && (
@@ -140,15 +177,19 @@ const Go = (props) => {
           </>
         )}
         {activeStep === 2 && (
-          <>
+          <SubmitStep>
             <Subheading>Task 1</Subheading>
-            <img src={form.Task1} alt="" />
+            <UploadedImageDisplay src={form.Task1} alt="" />
             <Subheading>Task 2</Subheading>
             <Paragraph>1. {form.Task2a}</Paragraph>
             <Paragraph>2. {form.Task2b}</Paragraph>
             <Paragraph>3. {form.Task2c}</Paragraph>
             <TextButton type={"submit"} text={"Submit"} />
-          </>
+            <br />
+            <p>OR</p>
+            <br />
+            <Links onClick={startOver}>DISCARD CHANGES AND START AGAIN </Links>
+          </SubmitStep>
         )}
       </FormContainer>
       <Links onClick={() => props.setMissionState("get")}>

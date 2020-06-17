@@ -6,6 +6,7 @@ import QuizComplete from "../../components/missions/quizComplete/QuizComplete";
 import Go from "../../components/missions/go/Go";
 import Complete from "../../components/missions/complete/Complete";
 import Heading from "../../components/global/heading/Heading";
+import Navbar from "../../components/global/navbar/Navbar";
 
 const MissionPage = () => {
   // state goes here
@@ -36,6 +37,8 @@ const MissionPage = () => {
   } else {
     return (
       <>
+        <Navbar />
+
         {missionState !== "quizComplete" && missionState !== "complete" && (
           <GetSetReadyGo missionState={missionState} />
         )}
