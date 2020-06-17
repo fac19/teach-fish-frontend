@@ -160,7 +160,6 @@ exports[`My missions page component is styled 1`] = `
   >
     <img
       className="c5"
-      src="mission-one-icon.svg"
     />
     <button
       className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-root-2"

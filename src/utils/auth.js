@@ -1,14 +1,8 @@
 import React from "react";
 import Landing from "../pages/landingPage/Landing";
 
-export default function requireAuthentication(
-  Component,
-  user,
-  isLoggedIn,
-  handleLogIn,
-) {
+export default function requireAuthentication(Component, user) {
   function AuthHOC(props) {
-    // const preventDefault = (event) => event.preventDefault();
     return user ? <Component user={user} {...props} /> : <Landing />;
   }
   return AuthHOC;
