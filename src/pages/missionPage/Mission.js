@@ -44,6 +44,7 @@ const MissionPage = () => {
         )}
         {missionState === "get" && (
           <GetSet
+            missionNumber={missionNumber}
             missionName={currentMissionObject["Mission Name"]}
             superpower={currentMissionObject.Superpower}
             superpowerIcon={currentMissionObject["Superpower Icon"]}

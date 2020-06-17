@@ -11,6 +11,27 @@ import { useHistory } from "react-router-dom";
 
 const MyMissions = () => {
   const history = useHistory();
+  const [userEntry, setUserEntry] = React.useState();
+  const token = JSON.parse(localStorage.getItem("token"));
+  const email = token.email;
+
+  console.log(email);
+
+  React.useEffect(() => {
+    const func = async () => {
+      const fetchResult = await fetch(
+        `../../../.netlify/functions/fetch-entries/fetch-entries.js?email=${email}`,
+      );
+
+      await fetchResult.json().then((data) => {
+        setUserEntry(data);
+        console.log(data);
+      });
+    };
+    func();
+  }, [email]);
+
+  console.log(userEntry);
 
   return (
     <Page>
