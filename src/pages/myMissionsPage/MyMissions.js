@@ -10,7 +10,24 @@ import { TextButton } from "../../components/global/buttons/Buttons";
 import { useHistory } from "react-router-dom";
 
 const MyMissions = () => {
+  const [allMissionsData, setAllMissionData] = React.useState({});
+
   const history = useHistory();
+
+  React.useEffect(() => {
+    const func = async () => {
+      const post = await fetch(
+        `../../../.netlify/functions/fetch-all-missions/fetch-all-missions.js`,
+      );
+
+      await post.json().then((data) => {
+        console.log(data);
+        setAllMissionData(data);
+      });
+    };
+
+    func();
+  }, []);
 
   return (
     <Page>
@@ -18,7 +35,7 @@ const MyMissions = () => {
       <Heading>My Missions</Heading>
       <Avatar src={avatarImg} alt="Profile image" />
       <Mission>
-        <MissionIcon src={missionImg} />
+        <MissionIcon src={allMissionsData[0]} />
         <TextButton
           text={"Mission One"}
           onClick={() => history.push("/mission/1")}
