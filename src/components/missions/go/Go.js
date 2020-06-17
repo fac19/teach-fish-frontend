@@ -1,4 +1,5 @@
 import React from "react";
+import Links from "../../../components/global/links/Links";
 import { TextButton } from "../../global/buttons/Buttons";
 import { FormContainer, FormInputWrapper } from "./Go.style";
 import TextArea from "../../global/forms/textArea/TextArea";
@@ -93,6 +94,8 @@ const Go = (props) => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
 
+  const missionSite = `/mission/${props.missionNumber}`;
+
   return (
     <>
       <Steps activeStep={activeStep} handleNext={handleNext} />
@@ -149,6 +152,9 @@ const Go = (props) => {
           </>
         )}
       </FormContainer>
+      <Links onClick={() => props.setMissionState("get")}>
+        Restart mission
+      </Links>
     </>
   );
 };

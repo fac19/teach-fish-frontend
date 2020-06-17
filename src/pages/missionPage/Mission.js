@@ -12,6 +12,10 @@ const MissionPage = () => {
   const [quizAnswersCorrect, setQuizAnswersCorrect] = React.useState("false");
   const [missionState, setMissionState] = React.useState("get");
 
+  //DEVELOPMENT
+  // const [missionState, setMissionState] = React.useState("go");
+  const [missionComplete, setMissionComplete] = React.useState("false");
+
   const missionNumber = window.location.pathname.replace("/mission/", "");
 
   React.useEffect(() => {
@@ -70,6 +74,7 @@ const MissionPage = () => {
         )}
         {missionState === "go" && (
           <Go
+            missionNumber={missionNumber}
             task1={currentMissionObject["Task 1 Instructions"]}
             task2={currentMissionObject["Task 2 Instructions"]}
             task2a={currentMissionObject["Task 2a Question"]}
