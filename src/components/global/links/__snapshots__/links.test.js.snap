@@ -8,6 +8,8 @@ exports[`Link component is styled 1`] = `
   color: #026CB6;
   -webkit-text-decoration: underline;
   text-decoration: underline;
+  display: block;
+  text-align: center;
 }
 
 .c0:hover {
