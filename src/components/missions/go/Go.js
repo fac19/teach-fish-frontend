@@ -73,6 +73,7 @@ const Go = (props) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    props.setMissionState("complete");
 
     const response = await fetch(
       "../../../.netlify/functions/post-entries/post-entries.js",
@@ -93,8 +94,6 @@ const Go = (props) => {
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
-
-  const missionSite = `/mission/${props.missionNumber}`;
 
   return (
     <>

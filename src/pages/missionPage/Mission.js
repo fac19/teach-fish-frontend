@@ -2,8 +2,9 @@ import React from "react";
 import GetSetReadyGo from "../../components/missions/getSetReadyGo/GetSetReadyGo.js";
 import GetSet from "../../components/missions/getSet/GetSet";
 import Ready from "../../components/missions/ready/Ready";
-import Go from "../../components/missions/go/Go";
 import QuizComplete from "../../components/missions/quizComplete/QuizComplete";
+import Go from "../../components/missions/go/Go";
+import Complete from "../../components/missions/complete/Complete";
 import Heading from "../../components/global/heading/Heading";
 
 const MissionPage = () => {
@@ -11,10 +12,6 @@ const MissionPage = () => {
   const [currentMissionObject, setCurrentMissionObject] = React.useState({});
   const [quizAnswersCorrect, setQuizAnswersCorrect] = React.useState("false");
   const [missionState, setMissionState] = React.useState("get");
-
-  //DEVELOPMENT
-  // const [missionState, setMissionState] = React.useState("go");
-  const [missionComplete, setMissionComplete] = React.useState("false");
 
   const missionNumber = window.location.pathname.replace("/mission/", "");
 
@@ -39,12 +36,11 @@ const MissionPage = () => {
   } else {
     return (
       <>
-        {missionState !== "quizComplete" && (
+        {missionState !== "quizComplete" && missionState !== "complete" && (
           <GetSetReadyGo missionState={missionState} />
         )}
         {missionState === "get" && (
           <GetSet
-            missionNumber={missionNumber}
             missionName={currentMissionObject["Mission Name"]}
             superpower={currentMissionObject.Superpower}
             superpowerIcon={currentMissionObject["Superpower Icon"]}
@@ -83,6 +79,7 @@ const MissionPage = () => {
             setMissionState={setMissionState}
           />
         )}
+        {missionState === "complete" && <Complete />}
       </>
     );
   }
