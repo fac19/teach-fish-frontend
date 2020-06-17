@@ -28,7 +28,6 @@ exports.handler = async (event, context) => {
 
   try {
     let icons = {};
-    // data.map((mission, i) => icons.push({i: mission["Superpower Icon"]}))
     data.map((mission, i) => (icons[i] = mission["Superpower Icon"]));
     return {
       statusCode: 200,

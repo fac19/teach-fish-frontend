@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  // Redirect,
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Landing from "./pages/landingPage/Landing";
 import About from "./pages/aboutPage/About";
 import SignUp from "./pages/signUpPage/SignUp";
@@ -42,7 +37,6 @@ const App = () => {
             <Route path="/about" component={() => <About />} />
             <Route path="/signup" component={() => <SignUp />} />
             <Route path="/logout" />
-
             <Route path="/my-profile" component={auth(MyProfile, userInfo)} />
             <Route
               path="/my-profile"
@@ -56,8 +50,6 @@ const App = () => {
               path="/mission/:number"
               component={auth(Mission, netlifyIdentity.currentUser())}
             />
-            {/* <Route path="/my-missions" component={() => <MyMissions />} /> */}
-            {/* <Route path="/mission/:number" component={() => <Mission />} /> */}
           </Switch>
         </Router>
       </AppContainer>

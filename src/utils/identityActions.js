@@ -1,7 +1,6 @@
 import netlifyIdentity from "netlify-identity-widget";
 
 export function loginUser() {
-  console.log(netlifyIdentity);
   if (netlifyIdentity && netlifyIdentity.currentUser()) {
     const {
       app_metadata,
@@ -11,9 +10,6 @@ export function loginUser() {
       id,
       user_metadata,
     } = netlifyIdentity.currentUser();
-
-    // token
-    console.log(netlifyIdentity.currentUser().token.access_token);
 
     localStorage.setItem(
       "token",
