@@ -13,6 +13,7 @@ exports.handler = async (event, context) => {
   const entriesTable = base("Entries");
 
   const form = JSON.parse(event.body);
+  console.log("form in post-entries is :", form);
 
   let data = [];
   await entriesTable

@@ -20,12 +20,6 @@ const Go = (props) => {
     Task2c: "",
   });
 
-  React.useEffect(() => {
-    setForm(file);
-    console.log(form);
-    console.log("useEffect");
-  }, [file]);
-
   const uploadImage = () => {
     window.cloudinary.openUploadWidget(
       {
@@ -57,14 +51,9 @@ const Go = (props) => {
       (error, result) => {
         if (!error && result && result.event === "success") {
           const url = result.info.url;
-          //  setForm({ ...form, Task1: url});
+          console.log(result);
+          setForm({ ...form, Task1: url });
           setUploadedFile(url);
-          // console.log(url)
-          // // let formCopy = {...form};
-          // // formCopy.Task1 = file;
-          // setForm({ ...form, Task1: url});
-
-          // console.log('form is :', form)
         }
       },
     );
@@ -113,7 +102,6 @@ const Go = (props) => {
             <Subheading>Task 1</Subheading>
             <Paragraph>{props.task1}</Paragraph>
             <TextButton text={"Upload your image"} onClick={uploadImage} />
-            <p>File path: {form.Task1}</p>
             <TextButton text={"Go To Next Task"} onClick={handleNext} />
           </>
         )}
@@ -152,7 +140,7 @@ const Go = (props) => {
         {activeStep === 2 && (
           <>
             <Subheading>Task 1</Subheading>
-            <Paragraph>Your image {form.Task1}</Paragraph>
+            <img src={form.Task1} alt="" />
             <Subheading>Task 2</Subheading>
             <Paragraph>1. {form.Task2a}</Paragraph>
             <Paragraph>2. {form.Task2b}</Paragraph>

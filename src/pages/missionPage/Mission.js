@@ -10,7 +10,7 @@ const MissionPage = () => {
   // state goes here
   const [currentMissionObject, setCurrentMissionObject] = React.useState({});
   const [quizAnswersCorrect, setQuizAnswersCorrect] = React.useState("false");
-  const [missionState, setMissionState] = React.useState("get");
+  const [missionState, setMissionState] = React.useState("go");
 
   const missionNumber = window.location.pathname.replace("/mission/", "");
 
