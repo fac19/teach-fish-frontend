@@ -20,7 +20,6 @@ const MyMissions = () => {
       );
 
       await post.json().then((data) => {
-        console.log(data);
         setAllMissionData(data);
       });
     };
