@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import PersonAddIcon from "@material-ui/icons/PersonAdd";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import CloudUploadIcon from "@material-ui/icons/CloudUpload";
 import { primaryColour, fontColour, accentColour } from "../colours";
 
 const useStyles = makeStyles((theme) => ({
@@ -49,6 +50,22 @@ const SignUpButton = (props) => {
   );
 };
 
+const ImageUploadButton = (props) => {
+  const classes = useStyles();
+
+  return (
+    <Button
+      variant="contained"
+      color="default"
+      className={classes.button}
+      onClick={props.onClick}
+      size="large"
+      startIcon={<CloudUploadIcon />}>
+      {props.text}
+    </Button>
+  );
+};
+
 const LogInButton = (props) => {
   const classes = useStyles();
 
@@ -62,4 +79,4 @@ const LogInButton = (props) => {
   );
 };
 
-export { TextButton, SignUpButton, LogInButton };
+export { TextButton, SignUpButton, LogInButton, ImageUploadButton };
