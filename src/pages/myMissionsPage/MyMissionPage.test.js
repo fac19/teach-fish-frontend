@@ -27,16 +27,16 @@ test("Mission One button renders correctly", () => {
   screen.getByText("Mission One");
 });
 
-// test("Mission two and three buttons are disabled", () => {
-//   render(
-//     <Router>
-//       <MyMissionPage />
-//     </Router>,
-//   );
-//   expect(
-//     screen.getByText("Mission Two").closest("button").disabled,
-//   ).toBeTruthy();
-//   expect(
-//     screen.getByText("Mission Three").closest("button").disabled,
-//   ).toBeTruthy();
-// });
+test("Mission two and three buttons are disabled", () => {
+  render(
+    <Router>
+      <MyMissionPage />
+    </Router>,
+  );
+  expect(
+    screen.getByText("Mission Two").closest("button").disabled,
+  ).toBeTruthy();
+  expect(
+    screen.getByText("Mission Three").closest("button").disabled,
+  ).toBeTruthy();
+});
