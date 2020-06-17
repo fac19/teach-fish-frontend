@@ -3,11 +3,10 @@ import { render } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
 import Landing from "./pages/landingPage/Landing";
 import About from "./pages/aboutPage/About";
-import Login from "./pages/loginPage/Login";
 import SignUp from "./pages/signUpPage/SignUp";
-import MyMissions from "./pages/myMissionsPage/MyMissions";
-import MyProfile from "./pages/myProfilePage/MyProfile";
-import Mission from "./pages/missionPage/Mission";
+// import MyMissions from "./pages/myMissionsPage/MyMissions";
+// import MyProfile from "./pages/myProfilePage/MyProfile";
+// import Mission from "./pages/missionPage/Mission";
 import { AppContextProvider } from "./utils/AppContext";
 
 test("Renders landing page", () => {
@@ -37,15 +36,6 @@ test("Renders SignUp page", () => {
     </AppContextProvider>,
   );
   expect(getByText(/Before you begin/)).toBeTruthy();
-});
-
-test("Renders login page", () => {
-  const { getByText } = render(
-    <AppContextProvider>
-      <Login />
-    </AppContextProvider>,
-  );
-  expect(getByText(/Login/)).toBeTruthy();
 });
 
 // test("Renders my missions page", () => {
