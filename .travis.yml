@@ -6,7 +6,7 @@ install:
 
 script:
   - npm run test -- --coverage --updateSnapshot
-  # - CI=false npm run build
+  - CI=false npm run build
 
 after-script:
   - bash <(curl -s https://codecov.io/bash)
