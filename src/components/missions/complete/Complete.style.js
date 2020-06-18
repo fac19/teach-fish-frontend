@@ -1,25 +1,25 @@
 import styled from "styled-components";
 import { fontColour } from "../../global/colours";
 
-const ImageWrapper = styled.section`
+const ImageWrapper = styled.div`
   display: flex;
-  height: 50vh;
-  margin: 0;
+  height: 40vh;
+  margin: 2rem;
   padding: 0;
+  justify-content: center;
   position: relative;
 `;
 
 const Image = styled.img`
   position: absolute;
-  left: 10%;
-  top: 25%;
   width: 80%;
+  bottom: 20%;
+  max-width: 300px;
+  max-height: 200px;
 `;
 
 const Circle = styled.img`
-  // margin: 25% 0;
-  //   position: absolute;
-  width: 100%;
+  height: 100%;
 `;
 
 const Text = styled.h2`
