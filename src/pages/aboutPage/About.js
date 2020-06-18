@@ -13,10 +13,19 @@ const About = () => {
       <BackIcon to={"/"} />
       <Heading>About the App</Heading>
       <AboutWrapper>
+        <Text>Welcome to Enterprise Adventure.</Text>
         <Text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar
-          pretium condimentum donec elementum eget. Pulvinar pretium{" "}
+          This brand new app will take you on a life-changing journey!
         </Text>
+        <Text>
+          Take part in exciting missions to score points, level up and collect
+          badges.
+        </Text>
+        <Text>
+          Along the way you’ll develop essential skills to succeed in school,
+          work and life.
+        </Text>
+        <Text>Don’t delay – sign up now!</Text>
         <TextButton
           type={"button"}
           text={"Sign Up and Join the Movement!"}

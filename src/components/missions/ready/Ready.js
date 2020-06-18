@@ -49,7 +49,7 @@ const Ready = (props) => {
         <Subheading>
           Mission {props.missionNumber}: <br /> {props.missionName}
         </Subheading>
-        <Paragraph>Let's see what you have learnt so far</Paragraph>
+        <Paragraph>Let's make sure you have understood the mission</Paragraph>
         <SectionTitle>Question {currentQuestion}</SectionTitle>
         {currentQuestion === "1" && (
           <RadioButtons
