@@ -37,7 +37,7 @@ const App = () => {
             <Route path="/about" component={() => <About />} />
             <Route path="/signup" component={() => <SignUp />} />
             <Route path="/logout" />
-            <Route path="/my-profile" component={auth(MyProfile, userInfo)} />
+
             <Route
               path="/my-profile"
               component={auth(MyProfile, netlifyIdentity.currentUser())}
