@@ -23,6 +23,7 @@ const Mission = styled.article`
 const MissionIcon = styled.img`
   border-radius: 50%;
   margin-right: 1rem;
+  padding: 0.5rem;
   border: 1px solid grey;
   height: 3rem;
   width: 3rem;
