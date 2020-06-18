@@ -23,18 +23,18 @@ Array [
   >
     MISSION COMPLETE!!
   </h2>,
-  <section
-    className="sc-AxjAm iSFHIL"
+  <div
+    className="sc-AxjAm eCTsxI"
   >
     <img
-      className="sc-AxiKw chpAef"
+      className="sc-AxiKw dKbEvk"
       src="circle.svg"
     />
     <img
-      className="sc-AxirZ dwTxAr"
+      className="sc-AxirZ gSCDgC"
       src="badge.svg"
     />
-  </section>,
+  </div>,
   <a
     className="makeStyles-links-1"
     href="/my-missions"
