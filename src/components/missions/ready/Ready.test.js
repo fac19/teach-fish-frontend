@@ -19,7 +19,7 @@ test("Ready renders onto the page", () => {
       Question2CorrectAnswer={Question2CorrectAnswer}
     />,
   );
-  screen.getByText("Let's see what you have learnt so far");
+  screen.getByText("Let's make sure you have understood the mission");
   screen.getByText("question 1");
   screen.getByText("Correct Answer 1");
 });

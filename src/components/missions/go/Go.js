@@ -116,8 +116,6 @@ const Go = (props) => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
 
-  const task1Array = props.splitStr(props.task1);
-
   return (
     <>
       <Steps activeStep={activeStep} handleNext={handleNext} />
@@ -125,9 +123,7 @@ const Go = (props) => {
         {activeStep === 0 && (
           <>
             <Subheading>Task 1</Subheading>
-            {task1Array.map((p) => {
-              return <Paragraph>{p}</Paragraph>;
-            })}
+            {props.splitStr(props.task1)}
 
             <ImageUploadButton
               text={"Upload your image"}

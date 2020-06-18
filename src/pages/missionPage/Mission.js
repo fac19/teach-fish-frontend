@@ -55,9 +55,11 @@ const MissionPage = () => {
   const isLoading = Object.keys(currentMissionObject).length === 0;
   const userCompleted = userEntry !== undefined;
 
-  //Split string function
+  //Split string function into paragraphs and bullet points
   const splitStr = (str) => {
-    return str.split("(p) ");
+    return str.split("(p) ").map((p) => {
+      return <Paragraph>{p}</Paragraph>;
+    });
   };
 
   if (userCompleted) {

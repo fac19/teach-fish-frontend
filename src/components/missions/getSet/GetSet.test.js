@@ -3,6 +3,7 @@ import { render, screen } from "@testing-library/react";
 import GetSet from "./GetSet";
 
 test("GetSet renders onto the page", () => {
-  render(<GetSet />);
+  const splitStr = jest.fn();
+  render(<GetSet splitStr={splitStr} />);
   screen.getByText("Introduction Video");
 });
