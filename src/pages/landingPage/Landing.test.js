@@ -48,17 +48,3 @@ test("TAMTF logo renders correctly", () => {
   );
   screen.getByAltText("Teach a Man to Fish logo");
 });
-
-// test("Button click redirects to new page", async () => {
-//   render(
-//     <Router>
-//       <Landing />
-//     </Router>,
-//   );
-//   const signUpButton = screen.getByRole("button");
-//   fireEvent.click(signUpButton);
-
-//   const formPage = await screen.getByText("Get Started");
-//   // expect(formPage).toHaveLength
-//   console.log(formPage);
-// });

@@ -9,16 +9,10 @@ import DateInput from "../../components/global/forms/dateInput/DateInput";
 import { TextButton } from "../../components/global/buttons/Buttons";
 import { FormContainer, FormInputWrapper } from "./SignUp.style";
 import { AppContext } from "../../utils/AppContext";
-// import fetchStudentRecords from "../../utils/fetch-data";
 
 const SignUp = () => {
   const { isUserInfoComplete, setIsUserInfoComplete } = useContext(AppContext);
   const { loginInfo, setLoginInfo } = useContext(AppContext);
-  // const { isUserInfoComplete, setIsUserInfoComplete } = React.useState();
-  // const { loginInfo, setLoginInfo } = React.useState({
-  //   name: "",
-  //   email: "",
-  // });
 
   const history = useHistory();
   const token = JSON.parse(localStorage.getItem("token"));
