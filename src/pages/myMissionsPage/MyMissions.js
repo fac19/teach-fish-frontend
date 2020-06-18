@@ -12,25 +12,6 @@ const MyMissions = () => {
   const [allMissionsData, setAllMissionData] = React.useState({});
 
   const history = useHistory();
-  // const [userEntry, setUserEntry] = React.useState();
-  // const token = JSON.parse(localStorage.getItem("token"));
-  // const email = token.email;
-
-  // React.useEffect(() => {
-  //   const func = async () => {
-  //     const fetchResult = await fetch(
-  //       `../../../.netlify/functions/fetch-entries/fetch-entries.js?email=${email}`,
-  //     );
-
-  //     await fetchResult.json().then((data) => {
-  //       setUserEntry(data);
-  //       console.log("data", data);
-  //     });
-  //   };
-  //   func();
-  // }, [email]);
-
-  // console.log("userEntry", userEntry);
 
   React.useEffect(() => {
     const func = async () => {
