@@ -1,5 +1,4 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import renderer from "react-test-renderer";
 import Complete from "./Complete";
@@ -9,7 +8,7 @@ import Complete from "./Complete";
 //   screen.getByText("NEXT MISSION UNLOCKED");
 // });
 
-test("", () => {
+test("Mission complete page rendering correctly", () => {
   const tree = renderer
     .create(
       <BrowserRouter>
@@ -17,6 +16,5 @@ test("", () => {
       </BrowserRouter>,
     )
     .toJSON();
-  //   expect(tree).toMatchSnapshot();
   expect(tree).toMatchSnapshot();
 });

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[` 1`] = `
+exports[`Mission complete page rendering correctly 1`] = `
 Array [
   <canvas
     height={768}
