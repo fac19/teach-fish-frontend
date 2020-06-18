@@ -123,7 +123,7 @@ const Go = (props) => {
         {activeStep === 0 && (
           <>
             <Subheading>Task 1</Subheading>
-            <Paragraph>{props.task1}</Paragraph>
+            {props.splitStr(props.task1)}
 
             <ImageUploadButton
               text={"Upload your image"}

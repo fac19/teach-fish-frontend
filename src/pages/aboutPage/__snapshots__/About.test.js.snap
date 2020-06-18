@@ -73,8 +73,27 @@ Array [
     <p
       className="c1"
     >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar pretium condimentum donec elementum eget. Pulvinar pretium
-       
+      Welcome to Enterprise Adventure.
+    </p>
+    <p
+      className="c1"
+    >
+      This brand new app will take you on a life-changing journey!
+    </p>
+    <p
+      className="c1"
+    >
+      Take part in exciting missions to score points, level up and collect badges.
+    </p>
+    <p
+      className="c1"
+    >
+      Along the way you’ll develop essential skills to succeed in school, work and life.
+    </p>
+    <p
+      className="c1"
+    >
+      Don’t delay – sign up now!
     </p>
     <button
       className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-root-2"

@@ -1,6 +1,5 @@
 import React from "react";
 import Subheading from "../../../components/global/subheading/Subheading";
-import Paragraph from "../../../components/global/paragraph/Paragraph";
 import {
   SuperPowerBox,
   SuperPowerIconContainer,
@@ -26,7 +25,7 @@ const GetSet = (props) => {
           </SuperPowerTitle>
         </SuperPowerIconContainer>
       </SuperPowerBox>
-      <Paragraph>{props.getSet}</Paragraph>
+      {props.splitStr(props.getSet)}
       <VideoTitle>Introduction Video</VideoTitle>
       <SuperPowerVideoContainer>
         <iframe
@@ -39,7 +38,7 @@ const GetSet = (props) => {
           allowFullScreen></iframe>
       </SuperPowerVideoContainer>
       <TextButton
-        text={"Click to start"}
+        text={"Start!"}
         onClick={() => props.setMissionState("ready")}
       />
     </GetSetContainer>
