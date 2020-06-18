@@ -10,7 +10,6 @@ import AppContainer from "./App.style";
 import netlifyIdentity from "netlify-identity-widget";
 import auth from "../src/utils/auth";
 import { loginUser, logoutUser } from "../src/utils/identityActions";
-import "./App.css";
 import { AppContextProvider } from "./utils/AppContext";
 
 const App = () => {

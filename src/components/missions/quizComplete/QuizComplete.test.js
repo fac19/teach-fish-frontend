@@ -8,7 +8,6 @@ test("Quiz results render correctly onto the page", () => {
   render(<QuizComplete quizAnswersCorrect={quizAnswersCorrect} />);
   screen.getByText("You are literally a STAR");
   screen.getByText("Go");
-  //   screen.getByText("Correct Answer 1");
 
   quizAnswersCorrect = false;
   render(<QuizComplete quizAnswersCorrect={quizAnswersCorrect} />);
