@@ -3,6 +3,7 @@
 exports[`Paragraph component is styled 1`] = `
 .c0 {
   text-align: center;
+  line-height: 1.2;
 }
 
 <p
