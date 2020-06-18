@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Mission complete page rendering correctly 1`] = `
+Array [
+  <canvas
+    height={768}
+    initialY={16}
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "pointerEvents": "none",
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+        "zIndex": 2,
+      }
+    }
+    width={1024}
+  />,
+  <h2
+    className="sc-AxhCb kqvdZj"
+  >
+    MISSION COMPLETE!!
+  </h2>,
+  <section
+    className="sc-AxjAm iSFHIL"
+  >
+    <img
+      className="sc-AxiKw chpAef"
+      src="circle.svg"
+    />
+    <img
+      className="sc-AxirZ dwTxAr"
+      src="badge.svg"
+    />
+  </section>,
+  <a
+    className="makeStyles-links-1"
+    href="/my-missions"
+    onClick={[Function]}
+  >
+    NEXT MISSION UNLOCKED
+  </a>,
+]
+`;
