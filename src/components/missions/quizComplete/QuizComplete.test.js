@@ -2,7 +2,7 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import QuizComplete from "./QuizComplete";
 
-test("Quiz correct renders onto the page", () => {
+test("Quiz results render correctly onto the page", () => {
   let quizAnswersCorrect = true;
 
   render(<QuizComplete quizAnswersCorrect={quizAnswersCorrect} />);
