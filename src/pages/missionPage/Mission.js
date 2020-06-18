@@ -44,7 +44,6 @@ const MissionPage = () => {
       );
 
       await post.json().then((data) => {
-        console.log(data);
         setCurrentMissionObject(data);
       });
     };

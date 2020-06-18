@@ -73,7 +73,6 @@ const Go = (props) => {
       (error, result) => {
         if (!error && result && result.event === "success") {
           const url = result.info.url;
-          console.log(result);
           setForm({ ...form, Task1: url });
           setUploadedFile(url);
         }
