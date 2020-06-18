@@ -31,12 +31,10 @@ const MissionPage = () => {
 
       await fetchResult.json().then((data) => {
         setUserEntry(data);
-        console.log("data", data);
       });
     };
     func();
   }, [email]);
-  console.log("userEntry", userEntry);
 
   //Fetches mission information
   React.useEffect(() => {
@@ -46,6 +44,7 @@ const MissionPage = () => {
       );
 
       await post.json().then((data) => {
+        console.log(data);
         setCurrentMissionObject(data);
       });
     };
@@ -55,6 +54,11 @@ const MissionPage = () => {
 
   const isLoading = Object.keys(currentMissionObject).length === 0;
   const userCompleted = userEntry !== undefined;
+
+  //Split string function
+  const splitStr = (str) => {
+    return str.split("(p) ");
+  };
 
   if (userCompleted) {
     return (
@@ -100,6 +104,7 @@ const MissionPage = () => {
               getSet={currentMissionObject["Get Set"]}
               video={currentMissionObject.Video}
               setMissionState={setMissionState}
+              splitStr={splitStr}
             />
           )}
           {missionState === "ready" && (
@@ -130,6 +135,7 @@ const MissionPage = () => {
               task2b={currentMissionObject["Task 2b Question"]}
               task2c={currentMissionObject["Task 2c Question"]}
               setMissionState={setMissionState}
+              splitStr={splitStr}
             />
           )}
           {missionState === "complete" && <Complete />}

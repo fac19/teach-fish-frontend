@@ -13,6 +13,8 @@ import {
 import { TextButton } from "../../../components/global/buttons/Buttons";
 
 const GetSet = (props) => {
+  const getSetArray = props.splitStr(props.getSet);
+
   return (
     <GetSetContainer>
       <Subheading>
@@ -26,7 +28,9 @@ const GetSet = (props) => {
           </SuperPowerTitle>
         </SuperPowerIconContainer>
       </SuperPowerBox>
-      <Paragraph>{props.getSet}</Paragraph>
+      {getSetArray.map((p) => {
+        return <Paragraph>{p}</Paragraph>;
+      })}
       <VideoTitle>Introduction Video</VideoTitle>
       <SuperPowerVideoContainer>
         <iframe
