@@ -32,11 +32,11 @@ Codecov
 
 ### Style guide
 
-- Our style guide can be found [here](https://www.notion.so/Style-guide-5815c179ed1d4425b5bdbeac8b877254)
+- Our style guide can be found [here](./docs/style-guide.md)
 
 ### Usability testing
 
-- Script and results can be found [here](https://www.notion.so/Usability-testing-fe643fc367fd4c989adf2dbefcc18a26)
+- Script and results can be found [here](./docs/usability-testing.md)
 
 ---
 
