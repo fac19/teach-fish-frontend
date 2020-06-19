@@ -1,5 +1,6 @@
 import React from "react";
 import Label from "../Label";
+import countriesArray from "../../../../utils/countrieslist.js";
 
 const DropdownCountries = (props) => {
   return (
@@ -14,9 +15,9 @@ const DropdownCountries = (props) => {
         <option value="select-option" disabled>
           Select option
         </option>
-        <option value="Nepal">Nepal</option>
-        <option value="India">India</option>
-        <option value="Rwanda">Rwanda</option>
+        {countriesArray.map((country) => {
+          return <option value={country}>{country}</option>;
+        })}
       </select>
     </>
   );
