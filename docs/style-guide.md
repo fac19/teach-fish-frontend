@@ -22,7 +22,7 @@ _Font:_
 
 - Josefin sans
 
-_Colours:_
+_Core palette:_
 
 - We will stick to brand primary and secondary colours and include a lither blue and light grey.
 
