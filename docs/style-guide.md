@@ -38,7 +38,7 @@ All layouts will be built for mobile first.
 
 ## Use of colours
 
-| Colour name     | Hex code  |                              Colour |                                                 Use |
+| Colour name     | Hex code  | Colour |  Use |
 | --------------- | :-------: | ----------------------------------: | --------------------------------------------------: |
 | fontColour      | `#032049` |             ![navy](./img/navy.svg) | Headings, subheadings, paragraphs and buttons text. |
 | linkColour      | `#026CB6` |             ![blue](./img/blue.svg) |      Escape route links: go back, restart and help. |
@@ -52,7 +52,7 @@ All layouts will be built for mobile first.
 
 font-family: "Josefin Sans", sans-serif;
 
-| Component  |                 Size and style                 |                             Example |
+| Component  |                 Size and style                 | Example |
 | ---------- | :--------------------------------------------: | ----------------------------------: |
 | Button     |                1 rem uppercase                 |         ![button](./img/button.png) |
 | Heading    |  h1, 2rem capitalised, 4rem for wider screens  |       ![heading](./img/heading.png) |
