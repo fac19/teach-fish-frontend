@@ -34,7 +34,9 @@ _Brand logo:_
 
   ![TAMTF logo](./img/TAMTF-logo.png)
 
-All layouts will be built for mobile first.
+_Mobile first:_
+
+- All layouts will be built for mobile first.
 
 ## Use of colours
 
@@ -46,7 +48,7 @@ All layouts will be built for mobile first.
 | accentColour    | `#E55982` |             ![pink](./img/pink.svg) |          Button and link hover, also active states. |
 | primaryColour   | `#88D364` |           ![green](./img/green.svg) |                                  Buttons background |
 | secondaryColour | `#00C2F0` | ![light-blue](./img/light-blue.svg) |                                      Navigation bar |
-| sinactiveColour | `#E0E0E0` |             ![grey](./img/grey.svg) |                        Inactive and disabled states |
+| inactiveColour | `#E0E0E0` |             ![grey](./img/grey.svg) |                        Inactive and disabled states |
 
 ## Typography
 
