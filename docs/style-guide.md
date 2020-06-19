@@ -40,21 +40,21 @@ _Mobile first:_
 
 ## Use of colours
 
-| Colour name     | Hex code  | Colour |  Use |
+| Colour name     | Hex code  | Colour                              |  Use                                                |
 | --------------- | :-------: | ----------------------------------: | --------------------------------------------------: |
 | fontColour      | `#032049` |             ![navy](./img/navy.svg) | Headings, subheadings, paragraphs and buttons text. |
-| linkColour      | `#026CB6` |             ![blue](./img/blue.svg) |      Escape route links: go back, restart and help. |
-| bgColour        | `#FFFFFF` |           ![white](./img/white.svg) |                               App background colour |
-| accentColour    | `#E55982` |             ![pink](./img/pink.svg) |          Button and link hover, also active states. |
-| primaryColour   | `#88D364` |           ![green](./img/green.svg) |                                  Buttons background |
-| secondaryColour | `#00C2F0` | ![light-blue](./img/light-blue.svg) |                                      Navigation bar |
-| inactiveColour | `#E0E0E0` |             ![grey](./img/grey.svg) |                        Inactive and disabled states |
+| linkColour      | `#026CB6` |             ![blue](./img/blue.svg) | Escape route links: go back, restart and help.      |
+| bgColour        | `#FFFFFF` |           ![white](./img/white.svg) | App background colour                               |
+| accentColour    | `#E55982` |             ![pink](./img/pink.svg) | Button and link hover, also active states.          |
+| primaryColour   | `#88D364` |           ![green](./img/green.svg) | Buttons background                                  |
+| secondaryColour | `#00C2F0` | ![light-blue](./img/light-blue.svg) | Navigation bar                                      |
+| inactiveColour | `#E0E0E0` |             ![grey](./img/grey.svg) | Inactive and disabled states                         |
 
 ## Typography
 
 font-family: "Josefin Sans", sans-serif;
 
-| Component  |                 Size and style                 | Example |
+| Component  |                 Size and style                 | Example                             |
 | ---------- | :--------------------------------------------: | ----------------------------------: |
 | Button     |                1 rem uppercase                 |         ![button](./img/button.png) |
 | Heading    |  h1, 2rem capitalised, 4rem for wider screens  |       ![heading](./img/heading.png) |
