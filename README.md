@@ -30,6 +30,14 @@ Codecov
 
 - The completed and incomplete main user flow of our application can be found [here](https://github.com/fac19/teach-fish-frontend/blob/master/docs/user-flow.md).
 
+### Style guide
+
+- Our style guide can be found [here](https://www.notion.so/Style-guide-5815c179ed1d4425b5bdbeac8b877254)
+
+## Usability testing
+
+- Script and results can be found [here](https://www.notion.so/Usability-testing-fe643fc367fd4c989adf2dbefcc18a26)
+
 ---
 
 ## The Team
