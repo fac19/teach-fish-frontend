@@ -34,7 +34,7 @@ Codecov
 
 - Our style guide can be found [here](./docs/style-guide.md)
 
-## Usability testing
+### Usability testing
 
 - Script and results can be found [here](./docs/usability-testing.md)
 
